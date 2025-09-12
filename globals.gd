@@ -4,6 +4,7 @@ var hp:int
 @export var maxDeckSize:int = 21
 @export var deck:Array[Card]
 @export var discard:Array
+var hand:Array[Card]
 
 
 func _ready() -> void:

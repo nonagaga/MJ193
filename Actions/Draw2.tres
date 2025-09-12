@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DrawAction" load_steps=2 format=3 uid="uid://wp5gqivf5k0m"]
+
+[ext_resource type="Script" uid="uid://26c1ya4mgglh" path="res://Actions/Action Classes/DrawActionClass.gd" id="1_p7gm2"]
+
+[resource]
+script = ExtResource("1_p7gm2")
+num = 2
+metadata/_custom_type_script = "uid://26c1ya4mgglh"
