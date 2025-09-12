@@ -1,5 +1,4 @@
 extends Node
-class_name MusicManager
 
 # All layers of songs added should have a length equal to the length of the backing track
 # i.e. the bg track is 1 min, then the layer is also 1 min with empty audio where it shouldnt be playing
@@ -11,7 +10,7 @@ class_name MusicManager
 #then call start song with no parameters
 #if you need to add anything use the add next beat or add next measure to do so
 #with these two functions, enter a name in the second parameter to allow them to not kill themselves after playing
-#then you can use remove dext beat or remove next measure with the aforementioned name to kill them on queue
+#then you can use remove next beat or remove next measure with the aforementioned name to kill them on queue
 #
 #The swap next m/b functions will kill all audio then play their audio
 #if you give them full parameters they will use that information to create a new backing track

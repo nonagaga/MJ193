@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://globals.tscn"
-
+MusicManager="*res://Music Manager/music_manager.tscn"
 
 [display]
 
@@ -30,7 +30,6 @@ window/size/viewport_height=1080
 folder_colors={
 "res://Music Manager/": "green"
 }
-
 
 [rendering]
 

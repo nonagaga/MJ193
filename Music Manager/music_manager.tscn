@@ -6,7 +6,6 @@
 script = ExtResource("1_capmg")
 beat_timer = NodePath("Beat")
 measure_timer = NodePath("Measure")
-metronome = true
 
 [node name="Beat" type="Timer" parent="."]
 

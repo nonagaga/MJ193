@@ -6,22 +6,30 @@ class_name Enemy
 @export var dmg:int
 #how expensive is the enemy for our algorithm to spawn
 @export var points:int
+@export var animation_player : AnimationPlayer
 
 #overwritable function for when an enemy attacks
 func attackTrigger():
-	pass
+	if animation_player:
+		animation_player.play("attack")
+		await animation_player.animation_finished
 
 #overwritable function for when an enemy is damaged
 func damagedTrigger():
-	pass
+	if animation_player:
+		animation_player.play("damaged")
+		await animation_player.animation_finished
 
 #overwritable function for when an enemy dies
 func deathTrigger():
-	pass
+	if animation_player:
+		animation_player.play("death")
+		await animation_player.animation_finished
 
 #overwritable function for when an enemy spawns
 func entersTrigger():
-	pass
+	if animation_player:
+		animation_player.play("enter")
 
 func damaged(dmg:int):
 	damagedTrigger()
