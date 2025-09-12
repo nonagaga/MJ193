@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="Card" load_steps=11 format=3 uid="uid://c0b3rwaho0s1r"]
+
+[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_25r0k"]
+[ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_ds67f"]
+[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_d1438"]
+[ext_resource type="Script" uid="uid://bg5b3xot1fto5" path="res://Actions/Action Classes/DamageActionClass.gd" id="3_ds67f"]
+[ext_resource type="Script" uid="uid://dkubh0tdbalnt" path="res://Actions/Action Classes/DestroySelfActionClass.gd" id="4_d1438"]
+[ext_resource type="Script" uid="uid://bk4mghx3y6csd" path="res://Actions/Action Classes/AddCardToDeckActionClass.gd" id="5_krcru"]
+[ext_resource type="Resource" uid="uid://be62oioos54j7" path="res://Cards/GlassShard.tres" id="5_mf0ej"]
+
+[sub_resource type="Resource" id="Resource_d1438"]
+script = ExtResource("3_ds67f")
+damage = 10
+maxTargets = 1
+doesTarget = true
+text = "Deal [b]%s[/b] damage to target enemy. "
+metadata/_custom_type_script = "uid://bg5b3xot1fto5"
+
+[sub_resource type="Resource" id="Resource_krcru"]
+script = ExtResource("4_d1438")
+maxTargets = 0
+doesTarget = false
+text = "[b]Destroy[/b] this card. "
+metadata/_custom_type_script = "uid://dkubh0tdbalnt"
+
+[sub_resource type="Resource" id="Resource_mf0ej"]
+script = ExtResource("5_krcru")
+cardToAdd = ExtResource("5_mf0ej")
+maxTargets = null
+doesTarget = null
+text = "Add [b]1 Glass Shard Card[/b] to your deck."
+metadata/_custom_type_script = "uid://bk4mghx3y6csd"
+
+[resource]
+script = ExtResource("3_d1438")
+title = "Glass Dagger"
+price = 0
+maxTargets = 1
+discardCost = 0
+drawActions = Array[ExtResource("2_ds67f")]([])
+playActions = Array[ExtResource("2_ds67f")]([SubResource("Resource_d1438"), SubResource("Resource_krcru"), SubResource("Resource_mf0ej")])
+discardActions = Array[ExtResource("2_ds67f")]([])
+appliedTags = Array[ExtResource("1_25r0k")]([])
+drawTags = Array[ExtResource("1_25r0k")]([])
+playTags = Array[ExtResource("1_25r0k")]([])
+discardTags = Array[ExtResource("1_25r0k")]([])
+metadata/_custom_type_script = "uid://88hsnkwkom7x"

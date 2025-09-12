@@ -23,6 +23,18 @@ var text:String
 #array of enemies the card is targetting
 var targets:Array[Enemy]
 
+func die():
+	pass
+
+func setUpCard():
+	for i in drawActions:
+		i.card = self
+	for i in playActions:
+		i.card = self
+	for i in discardActions:
+		i.card = self
+	compileCardText()
+
 #when drawn execute all draw effects
 func drawEffect():
 	for i:Tag in drawTags:
