@@ -6,3 +6,6 @@ class_name DamageAction
 func resolve(targets:Array[Enemy]):
 	for i:Enemy in targets:
 		i.damaged(damage)
+
+func updateText():
+	actualText = text % str(damage)

@@ -5,3 +5,6 @@ class_name DrawAction
 func resolve(targets:Array[Enemy]):
 	for i in range(drawNum):
 		await Globals.GameManager.draw()
+
+func updateText():
+	actualText = text % str(drawNum)
