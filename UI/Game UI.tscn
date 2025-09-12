@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://cgq0lkaaw5wyd"]
+
+[ext_resource type="Script" uid="uid://b1xyjwfwav5t" path="res://UI/game_ui.gd" id="1_ewuok"]
+
+[node name="GameUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ewuok")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+vertical_scroll_mode = 0
+
+[node name="Hand" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Player Choices" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Play" type="Button" parent="Player Choices"]
+layout_mode = 2
+
+[node name="Cancel" type="Button" parent="Player Choices"]
+layout_mode = 2
+
+[node name="End Turn" type="Button" parent="Player Choices"]
+layout_mode = 2
+
+[node name="Void" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="Player Choices/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Player Choices/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="Player Choices/End Turn" to="." method="_on_end_turn_pressed"]

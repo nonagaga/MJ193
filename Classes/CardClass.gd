@@ -10,7 +10,7 @@ class_name Card
 @export var drawActions:Array[Action]
 @export var playActions:Array[Action]
 @export var discardActions:Array[Action]
-@export var icon:Texture2D
+@export var texture:Texture2D
 @export var title:String
 @export var text:String
 

@@ -2,4 +2,4 @@ extends Enemy
 
 
 func attackTrigger():
-	Player.health -= dmg
+	Globals.health -= dmg
