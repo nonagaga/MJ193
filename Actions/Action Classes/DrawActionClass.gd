@@ -7,3 +7,4 @@ func resolve(targets:Array[Enemy]):
 	while x <num:
 		if !Globals.deck.is_empty():
 			Globals.hand.append(Globals.deck.pop_front())
+			x+=1
