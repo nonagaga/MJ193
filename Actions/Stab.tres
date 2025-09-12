@@ -5,4 +5,7 @@
 [resource]
 script = ExtResource("1_ljql4")
 damage = 5
+maxTargets = 0
+doesTarget = false
+text = "Deal %s damage to target enemy"
 metadata/_custom_type_script = "uid://bg5b3xot1fto5"

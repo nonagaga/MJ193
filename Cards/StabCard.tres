@@ -1,16 +1,18 @@
-[gd_resource type="Resource" script_class="Card" load_steps=5 format=3 uid="uid://87kgyaemmdqe"]
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://87kgyaemmdqe"]
 
-[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_5o5rd"]
+[ext_resource type="Script" path="res://Classes/TagClass.gd" id="1_5o5rd"]
 [ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="1_x7xqd"]
 [ext_resource type="Resource" uid="uid://c8vj0fvto1pt" path="res://Actions/Stab.tres" id="2_5o5rd"]
 [ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="2_s1e03"]
+[ext_resource type="Texture2D" uid="uid://bs4cbal8fpet5" path="res://cardshark1.png" id="5_xt43l"]
 
 [resource]
 script = ExtResource("2_s1e03")
+title = "Stab"
+texture = ExtResource("5_xt43l")
 price = 10
 maxTargets = 1
 discardCost = 0
-tags = []
 drawActions = Array[ExtResource("1_x7xqd")]([])
 playActions = Array[ExtResource("1_x7xqd")]([ExtResource("2_5o5rd")])
 discardActions = Array[ExtResource("1_x7xqd")]([])
@@ -18,6 +20,4 @@ appliedTags = Array[ExtResource("1_5o5rd")]([])
 drawTags = Array[ExtResource("1_5o5rd")]([])
 playTags = Array[ExtResource("1_5o5rd")]([])
 discardTags = Array[ExtResource("1_5o5rd")]([])
-title = "Stab"
-text = "Deal [b] 5 damage [/b] to target enemy"
 metadata/_custom_type_script = "uid://88hsnkwkom7x"
