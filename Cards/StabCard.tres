@@ -14,5 +14,5 @@ drawActions = Array[ExtResource("1_x7xqd")]([])
 playActions = Array[ExtResource("1_x7xqd")]([ExtResource("2_5o5rd")])
 discardActions = Array[ExtResource("1_x7xqd")]([])
 title = "Stab"
-text = "Deal 5 damage to target enemy"
+text = "Deal [b] 5 damage [/b] to target enemy"
 metadata/_custom_type_script = "uid://88hsnkwkom7x"
