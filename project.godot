@@ -18,6 +18,12 @@ config/icon="res://icon.svg"
 
 Globals="*res://globals.tscn"
 
+[file_customization]
+
+folder_colors={
+"res://Music Manager/": "green"
+}
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0ad2pvftrwm2"]
+
+[ext_resource type="Script" uid="uid://pc3nt4fsto7i" path="res://Music Manager/music_manager.gd" id="1_capmg"]
+
+[node name="MusicManager" type="Node" node_paths=PackedStringArray("beat_timer", "measure_timer")]
+script = ExtResource("1_capmg")
+beat_timer = NodePath("Beat")
+measure_timer = NodePath("Measure")
+metronome = true
+
+[node name="Beat" type="Timer" parent="."]
+
+[node name="Measure" type="Timer" parent="."]
+
+[node name="Audio Players" type="Node" parent="."]
+
+[connection signal="timeout" from="Beat" to="." method="_on_beat_timeout"]
+[connection signal="timeout" from="Measure" to="." method="_on_measure_timeout"]

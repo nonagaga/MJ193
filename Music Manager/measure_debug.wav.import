@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dpfd3j3v1ri71"
+path="res://.godot/imported/measure_debug.wav-60a44232dd9eb3db8636078b30ea06e5.sample"
+
+[deps]
+
+source_file="res://Music Manager/measure_debug.wav"
+dest_files=["res://.godot/imported/measure_debug.wav-60a44232dd9eb3db8636078b30ea06e5.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
