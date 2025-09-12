@@ -1,0 +1,49 @@
+class_name SceneManager extends Node2D
+
+signal scene_changed(scene_name : String)
+
+@export var scene_list : Dictionary[String, PackedScene]
+@export var trans_list : Dictionary[String, PackedScene]
+var current_scene : Node
+var current_transition : Node
+
+func _ready() -> void:
+	var packed_scene = scene_list.get("default") as PackedScene
+	if not packed_scene:
+		printerr("NO DEFAULT SCENE PROVIDED IN SCENE LIST")
+		return
+
+	current_scene = packed_scene.instantiate()
+	add_child(current_scene)
+
+func transition_to(scene_name : String, transition_name : String = "default") -> void:
+	var transition_scene = trans_list.get(transition_name) as PackedScene
+	
+	# load transition
+	if not transition_scene:
+		printerr("NO DEFAULT TRANSITION PROVIDED IN TRANSITION LIST")
+		return
+	
+	var transition_instance = transition_scene.instantiate() as SceneTransition
+	
+	# make sure transition is always over loaded scene
+	add_child(transition_instance)
+	transition_instance.transition_in()
+	await transition_instance.transitioned_in
+	
+	# remove old scene
+	current_scene.queue_free()
+	
+	# load new scene
+	var new_scene = scene_list.get(scene_name) as PackedScene
+	
+	if not new_scene:
+		printerr("SCENE NAME: %s NOT FOUND IN SCENE LIST" % scene_name)
+		return
+		
+	current_scene = new_scene.instantiate()
+	add_child(current_scene)
+	transition_instance.transition_out()
+	
+	scene_changed.emit(scene_name)
+	

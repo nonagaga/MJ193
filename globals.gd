@@ -6,6 +6,7 @@ var hp:int
 @export var discard:Array
 var hand:Array[Card]
 
+@onready var scene_manager = get_tree().get_root().get_node("SceneManager")
 
 func _ready() -> void:
 	hp = maxHP
