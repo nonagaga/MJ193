@@ -15,7 +15,7 @@ func start_game() -> void:
 			
 func player_turn():
 	for i in range(3 - Globals.hand.size()):
-		draw_card()
+		draw()
 	
 	# play individual cards
 	# player has finished turn
