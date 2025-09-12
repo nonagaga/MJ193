@@ -2,7 +2,6 @@ extends Resource
 class_name Card
 #how expensive is this to buy from the shop
 @export var price:int = 0
-@export var damage:int = 0
 #how many enemies must this card target
 @export var maxTargets:int = 0
 #number of other cards that must be discarded to play this card
@@ -11,6 +10,10 @@ class_name Card
 @export var drawActions:Array[Action]
 @export var playActions:Array[Action]
 @export var discardActions:Array[Action]
+@export var icon:Texture2D
+@export var title:String
+@export var text:String
+
 #array of enemies the card is targetting
 var targets:Array[Enemy]
 

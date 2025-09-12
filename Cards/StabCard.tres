@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Card" load_steps=4 format=3 uid="uid://87kgyaemmdqe"]
+
+[ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="1_x7xqd"]
+[ext_resource type="Resource" uid="uid://c8vj0fvto1pt" path="res://Actions/Stab.tres" id="2_5o5rd"]
+[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="2_s1e03"]
+
+[resource]
+script = ExtResource("2_s1e03")
+price = 10
+maxTargets = 1
+discardCost = 0
+tags = []
+drawActions = Array[ExtResource("1_x7xqd")]([])
+playActions = Array[ExtResource("1_x7xqd")]([ExtResource("2_5o5rd")])
+discardActions = Array[ExtResource("1_x7xqd")]([])
+title = "Stab"
+text = "Deal 5 damage to target enemy"
+metadata/_custom_type_script = "uid://88hsnkwkom7x"
