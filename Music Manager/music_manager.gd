@@ -83,33 +83,33 @@ func swap_next_measure(song : AudioStream, bpm : float = 0, beats_per_measure : 
 ##adds a sound that will play on the next beat of the song
 ##if the sound is not given a name it will be treated as a oneshot and only played once
 ##the purpose of the name is to allow for sounds to loop and eventually be removed through their name
-func add_next_beat(stream : AudioStream, name : String = ""):
-	if name == "":
+func add_next_beat(stream : AudioStream, _name : String = ""):
+	if _name == "":
 		var player = create_oneshot_audio_player(stream)
 		beat_queue.append(player)
 	else:
-		if beat_dictionary.has(name) : print("Sound key already associated, not creating a new audio player."); return
+		if beat_dictionary.has(_name) : print("Sound key already associated, not creating a new audio player."); return
 		var player = create_audio_player(stream)
-		beat_dictionary[name] = player
+		beat_dictionary[_name] = player
 		beat_queue.append(player)
 
-func add_next_measure(stream :AudioStream, name : String = ""):
-	if name == "":
+func add_next_measure(stream :AudioStream, _name : String = ""):
+	if _name == "":
 		var player = create_oneshot_audio_player(stream)
 		measure_queue.append(player)
 	else:
-		if measure_dictionary.has(name) : print("Sound key already associated, not creating a new audio player."); return
+		if measure_dictionary.has(_name) : print("Sound key already associated, not creating a new audio player."); return
 		var player = create_audio_player(stream)
-		measure_dictionary[name] = player
+		measure_dictionary[_name] = player
 		measure_queue.append(player)
 
-func remove_next_beat(name : String):
-	if not beat_dictionary.has(name): return
-	r_beat_queue.append(beat_dictionary[name])
+func remove_next_beat(_name : String):
+	if not beat_dictionary.has(_name): return
+	r_beat_queue.append(beat_dictionary[_name])
 
-func remove_next_measure(name : String):
-	if not measure_dictionary.has(name): return
-	r_measure_queue.append(beat_dictionary[name])
+func remove_next_measure(_name : String):
+	if not measure_dictionary.has(_name): return
+	r_measure_queue.append(beat_dictionary[_name])
 
 func _on_beat_timeout():
 	if not beat_queue.is_empty():
@@ -120,8 +120,8 @@ func _on_beat_timeout():
 		beat_queue.clear()
 	
 	if not r_beat_queue.is_empty():
-		for name : String in r_beat_queue:
-			beat_dictionary[name].queue_free()
+		for _name : String in r_beat_queue:
+			beat_dictionary[_name].queue_free()
 		r_beat_queue.clear()
 	
 	if not metronome:return
@@ -137,8 +137,8 @@ func _on_measure_timeout():
 		measure_queue.clear()
 	
 	if not r_measure_queue.is_empty():
-		for name : String in r_measure_queue:
-			measure_dictionary[name].queue_free()
+		for _name : String in r_measure_queue:
+			measure_dictionary[_name].queue_free()
 		r_measure_queue.clear()
 		
 	if not metronome:return
