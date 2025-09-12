@@ -7,6 +7,7 @@
 
 [resource]
 script = ExtResource("2_s1e03")
+title = "Stab"
 price = 10
 maxTargets = 1
 discardCost = 0
@@ -17,6 +18,4 @@ appliedTags = Array[ExtResource("1_5o5rd")]([])
 drawTags = Array[ExtResource("1_5o5rd")]([])
 playTags = Array[ExtResource("1_5o5rd")]([])
 discardTags = Array[ExtResource("1_5o5rd")]([])
-title = "Stab"
-text = "Deal [b] 5 damage [/b] to target enemy"
 metadata/_custom_type_script = "uid://88hsnkwkom7x"
