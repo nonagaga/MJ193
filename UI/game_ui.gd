@@ -3,10 +3,18 @@ extends Control
 var cur_card_selected:CardElem = null
 var card_packed:PackedScene = preload("res://UI/Card Element/Card.tscn")
 
+@export var hand : HBoxContainer
+
+func _ready()->void:
+	if Globals.gameManager:
+		Globals.gameManager.card_drawn.connect(on_card_drawn)
+	
+	on_card_drawn(load("res://Cards/StabCard.tres"))
+
 func on_card_drawn(card:Card):
 	if card == null:
 		return
-	create_card(card).reparent($ScrollContainer/Hand,false)
+	create_card(card).reparent(hand,false)
 
 func create_card(card:Card)->CardElem:
 	var new_card_instance:CardElem = card_packed.instantiate()
