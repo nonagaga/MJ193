@@ -1,9 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://djg7o7uudcebl"]
-
-[ext_resource type="Script" uid="uid://bbaiiet0h266a" path="res://Cards/stab.gd" id="1_nk0jp"]
-
-[node name="Stab" type="Node2D"]
-script = ExtResource("1_nk0jp")
-price = 5
-damage = 5
-maxTargets = 1

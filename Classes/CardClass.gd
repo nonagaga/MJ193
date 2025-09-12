@@ -1,4 +1,4 @@
-extends Node2D
+extends Resource
 class_name Card
 @export var price:int = 0
 @export var damage:int = 0
@@ -6,17 +6,20 @@ class_name Card
 #number of other cards that must be discarded to play this card
 @export var discardCost:int = 0
 @export var tags:Array
+@export var drawActions:Array[Action]
+@export var playActions:Array[Action]
+@export var discardActions:Array[Action]
 #array of enemies the card is targetting
-var targets:Array = []
+var targets:Array[Enemy]
 
-#overwritable function for when card is drawn
 func drawEffect():
-	pass
+	for i:Action in drawActions:
+		i.resolve(targets)
 
-#overwritable function for when card is played
 func playEffect():
-	pass
+	for i:Action in playActions:
+		i.resolve(targets)
 
-#overwritable function for when card is discarded
 func discardEffect():
-	pass
+	for i:Action in discardActions:
+		i.resolve(targets)
