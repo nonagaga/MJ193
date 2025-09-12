@@ -6,18 +6,14 @@ class_name Card
 @export var maxTargets:int = 0
 #number of other cards that must be discarded to play this card
 @export var discardCost:int = 0
-@export var tags:Array
 @export var drawActions:Array[Action]
 @export var playActions:Array[Action]
 @export var discardActions:Array[Action]
-<<<<<<< HEAD
-=======
 #applied tags are tags that resolve their effects when they are applied
 @export var appliedTags:Array[Tag]
 @export var drawTags:Array[Tag]
 @export var playTags:Array[Tag]
 @export var discardTags:Array[Tag]
->>>>>>> card-class
 @export var texture:Texture2D
 @export var title:String
 @export var text:String
