@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 Globals="*res://globals.tscn"
 
-
 [display]
 
 window/size/viewport_width=1920
@@ -30,7 +29,6 @@ window/size/viewport_height=1080
 folder_colors={
 "res://Music Manager/": "green"
 }
-
 
 [rendering]
 
