@@ -1,22 +1,25 @@
 extends Resource
 class_name Card
+@export var title:String
+@export var texture:Texture2D
 #how expensive is this to buy from the shop
 @export var price:int = 0
 #how many enemies must this card target
 @export var maxTargets:int = 0
 #number of other cards that must be discarded to play this card
 @export var discardCost:int = 0
+@export_group("Card Effects")
 @export var drawActions:Array[Action]
 @export var playActions:Array[Action]
 @export var discardActions:Array[Action]
 #applied tags are tags that resolve their effects when they are applied
+@export_group("Card Tags")
 @export var appliedTags:Array[Tag]
 @export var drawTags:Array[Tag]
 @export var playTags:Array[Tag]
 @export var discardTags:Array[Tag]
-@export var texture:Texture2D
-@export var title:String
-@export var text:String
+@export_group("")
+var text:String
 
 #array of enemies the card is targetting
 var targets:Array[Enemy]

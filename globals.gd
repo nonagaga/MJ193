@@ -5,7 +5,7 @@ var hp:int
 @export var deck:Array[Card]
 @export var discard:Array
 var hand:Array[Card]
-
+var gameManager
 
 func _ready() -> void:
 	hp = maxHP

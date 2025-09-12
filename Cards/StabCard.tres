@@ -10,7 +10,6 @@ script = ExtResource("2_s1e03")
 price = 10
 maxTargets = 1
 discardCost = 0
-tags = []
 drawActions = Array[ExtResource("1_x7xqd")]([])
 playActions = Array[ExtResource("1_x7xqd")]([ExtResource("2_5o5rd")])
 discardActions = Array[ExtResource("1_x7xqd")]([])

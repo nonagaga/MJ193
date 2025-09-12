@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_p7gm2")
-num = 2
+drawNum = 2
 metadata/_custom_type_script = "uid://26c1ya4mgglh"

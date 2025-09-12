@@ -8,6 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_pjytt"]
 script = ExtResource("4_1i5pp")
+title = ""
 price = 0
 maxTargets = 0
 discardCost = 0
@@ -18,8 +19,6 @@ appliedTags = Array[ExtResource("3_1i5pp")]([])
 drawTags = Array[ExtResource("3_1i5pp")]([])
 playTags = Array[ExtResource("3_1i5pp")]([])
 discardTags = Array[ExtResource("3_1i5pp")]([])
-title = ""
-text = ""
 metadata/_custom_type_script = "uid://88hsnkwkom7x"
 
 [node name="Card" type="Node2D"]
