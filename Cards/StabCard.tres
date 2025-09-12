@@ -18,4 +18,5 @@ appliedTags = Array[ExtResource("1_5o5rd")]([])
 drawTags = Array[ExtResource("1_5o5rd")]([])
 playTags = Array[ExtResource("1_5o5rd")]([])
 discardTags = Array[ExtResource("1_5o5rd")]([])
+text = ""
 metadata/_custom_type_script = "uid://88hsnkwkom7x"
