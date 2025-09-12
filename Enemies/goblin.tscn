@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dr52bl0qivo86"]
+
+[ext_resource type="Script" uid="uid://kyv1csmihx7s" path="res://Enemies/goblin.gd" id="1_t8p1a"]
+
+[node name="goblin" type="Node2D"]
+script = ExtResource("1_t8p1a")
+maxHP = 10
+hp = 10
+speed = 10
+dmg = 5
+points = 10
