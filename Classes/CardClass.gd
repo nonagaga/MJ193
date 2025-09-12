@@ -19,7 +19,7 @@ class_name Card
 @export var playTags:Array[Tag]
 @export var discardTags:Array[Tag]
 @export_group("")
-var text:String
+@export var text:String
 
 #array of enemies the card is targetting
 var targets:Array[Enemy]
@@ -49,3 +49,6 @@ func discardEffect():
 func applyTag(tag:Tag):
 	tag.resolve()
 	appliedTags.append(tag)
+	
+func compileCard():
+	pass
