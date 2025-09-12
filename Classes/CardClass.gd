@@ -26,27 +26,27 @@ var targets:Array[Enemy]
 #when drawn execute all draw effects
 func drawEffect():
 	for i:Tag in drawTags:
-		i.resolve()
+		await i.resolve()
 	for i:Action in drawActions:
-		i.resolve(targets)
+		await i.resolve(targets)
 
 #when played execute all play effects
 func playEffect():
 	for i:Tag in drawTags:
-		i.resolve()
+		await i.resolve()
 	for i:Action in playActions:
-		i.resolve(targets)
+		await i.resolve(targets)
 
 #when discarded execute all discard effects
 func discardEffect():
 	for i:Tag in drawTags:
-		i.resolve()
+		await i.resolve()
 	for i:Action in discardActions:
-		i.resolve(targets)
+		await i.resolve(targets)
 
 #special case for tags who's functions only effect the card when they're added, ie halving a cards damage.
 func applyTag(tag:Tag):
-	tag.resolve()
+	await tag.resolve()
 	appliedTags.append(tag)
 
 #updates Card Text

@@ -7,5 +7,5 @@ script = ExtResource("1_p7gm2")
 drawNum = 2
 maxTargets = 0
 doesTarget = false
-text = "Draw %s cards"
+text = "Draw %s cards. "
 metadata/_custom_type_script = "uid://26c1ya4mgglh"
