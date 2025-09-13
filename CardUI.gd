@@ -9,6 +9,7 @@ signal deselected
 @onready var text: RichTextLabel = $CardOffset/Text
 @onready var title: RichTextLabel = $CardOffset/Title
 @onready var highlight: ColorRect = $CardOffset/Highlight
+@onready var price_text:Label = $PanelContainer/Price
 
 func _ready() -> void:
 	highlight.visible = false
@@ -23,15 +24,17 @@ func _ready() -> void:
 		)
 	
 	card_res.setUpCard()
-	card_res.drawEffect()
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	title.text = card_res.title
 	card_texture.texture = card_res.texture
 	text.text = card_res.text
+	price_text.text = str(card_res.price)
 
 func _on_mouse_entered():
+	#print("I %s have been entered"%[get_index()])
 	pass
 
 func _on_mouse_exited():
+	#print("I %s have been exited"%[get_index()])
 	pass
