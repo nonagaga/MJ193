@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="CardDataClass" load_steps=6 format=3 uid="uid://ci6dh4w5vjj4g"]
+
+[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_j1v4w"]
+[ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_n31ri"]
+[ext_resource type="Script" uid="uid://26c1ya4mgglh" path="res://Actions/Action Classes/DrawActionClass.gd" id="3_n31ri"]
+[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_u57fp"]
+
+[sub_resource type="Resource" id="Resource_u57fp"]
+resource_local_to_scene = true
+script = ExtResource("3_n31ri")
+drawNum = 1
+maxTargets = 0
+doesTarget = false
+text = "Draw 1 card."
+metadata/_custom_type_script = "uid://26c1ya4mgglh"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("3_u57fp")
+title = ""
+price = 5
+maxTargets = 0
+targetAll = false
+targetRandom = false
+discardCost = 0
+drawActions = Array[ExtResource("2_n31ri")]([])
+playActions = Array[ExtResource("2_n31ri")]([SubResource("Resource_u57fp")])
+discardActions = Array[ExtResource("2_n31ri")]([])
+appliedTags = Array[ExtResource("1_j1v4w")]([])
+drawTags = Array[ExtResource("1_j1v4w")]([])
+playTags = Array[ExtResource("1_j1v4w")]([])
+discardTags = Array[ExtResource("1_j1v4w")]([])
+text = ""
+metadata/_custom_type_script = "uid://88hsnkwkom7x"
