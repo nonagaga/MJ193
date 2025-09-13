@@ -1,58 +1,64 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgq0lkaaw5wyd"]
+[gd_scene load_steps=4 format=3 uid="uid://cgq0lkaaw5wyd"]
 
 [ext_resource type="Script" uid="uid://b1xyjwfwav5t" path="res://UI/game_ui.gd" id="1_ewuok"]
+[ext_resource type="Script" uid="uid://bxr5owbtp7eii" path="res://UI/hand.gd" id="2_m3g7l"]
+[ext_resource type="PackedScene" uid="uid://dpp7r7l0fdpvc" path="res://card.tscn" id="2_rlhut"]
 
-[node name="GameUi" type="Control" node_paths=PackedStringArray("hand")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="GameUi" type="CanvasLayer" node_paths=PackedStringArray("hand")]
 script = ExtResource("1_ewuok")
-hand = NodePath("HBoxContainer/ScrollContainer/Hand")
+hand = NodePath("Hand")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
+[node name="Player Choices" type="VBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
+offset_left = -78.0
+offset_bottom = 1080.0
+grow_horizontal = 0
 
-[node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-vertical_scroll_mode = 0
-
-[node name="Hand" type="HBoxContainer" parent="HBoxContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
-
-[node name="Player Choices" type="VBoxContainer" parent="HBoxContainer"]
-layout_mode = 2
-
-[node name="Play" type="Button" parent="HBoxContainer/Player Choices"]
+[node name="Play" type="Button" parent="Player Choices"]
 layout_mode = 2
 text = "Play"
 
-[node name="Cancel" type="Button" parent="HBoxContainer/Player Choices"]
+[node name="Cancel" type="Button" parent="Player Choices"]
 layout_mode = 2
 text = "Cancel"
 
-[node name="End Turn" type="Button" parent="HBoxContainer/Player Choices"]
+[node name="End Turn" type="Button" parent="Player Choices"]
 layout_mode = 2
 text = "End Turn"
 
+[node name="Hand" type="HBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 240.0
+offset_right = 1240.0
+grow_vertical = 0
+scale = Vector2(0.6, 0.6)
+pivot_offset = Vector2(-240, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 10
+theme_override_constants/separation = 500
+script = ExtResource("2_m3g7l")
+anim_speed = null
+
+[node name="Card" parent="Hand" instance=ExtResource("2_rlhut")]
+layout_mode = 2
+
+[node name="Card2" parent="Hand" instance=ExtResource("2_rlhut")]
+layout_mode = 2
+
+[node name="Card3" parent="Hand" instance=ExtResource("2_rlhut")]
+layout_mode = 2
+
 [node name="Void" type="Control" parent="."]
 visible = false
+layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[connection signal="pressed" from="HBoxContainer/Player Choices/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="HBoxContainer/Player Choices/Cancel" to="." method="_on_cancel_pressed"]
-[connection signal="pressed" from="HBoxContainer/Player Choices/End Turn" to="." method="_on_end_turn_pressed"]
+[connection signal="pressed" from="Player Choices/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Player Choices/Cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="Player Choices/End Turn" to="." method="_on_end_turn_pressed"]

@@ -1,14 +1,13 @@
-extends Control
+extends CanvasLayer
 
-var cur_card_selected:CardElem = null
-var card_packed:PackedScene = preload("res://UI/ Element/.tscn")
-
+var cur_card_selected:Card = null
+var card_packed = preload("res://card.tscn")
 @export var hand : HBoxContainer
 
 func _ready()->void:
 	if Globals.gameManager:
 		Globals.gameManager.card_drawn.connect(on_card_drawn)
-	
+		
 	on_card_drawn(load("res://Cards/StabCard.tres"))
 
 func on_card_drawn(card:CardDataClass):
@@ -16,18 +15,17 @@ func on_card_drawn(card:CardDataClass):
 		return
 	create_card(card).reparent(hand,false)
 
-func create_card(card:CardDataClass)->CardElem:
-	var new_card_instance:CardElem = card_packed.instantiate()
+func create_card(card:Card)->Control:
+	var new_card_instance = card_packed.instantiate()
 	new_card_instance.card_res = card
 	$Void.add_child(new_card_instance)
-	new_card_instance.fill_values()
 	return new_card_instance
 
-func card_selected(item:CardElem):
+func card_selected(item:Control):
 	if cur_card_selected!=null:
 		pass
 
-func deselect_card(item:CardElem):
+func deselect_card(item:Control):
 	pass
 
 func _on_play_pressed() -> void:
