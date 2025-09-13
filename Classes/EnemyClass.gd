@@ -17,6 +17,9 @@ var weakened:int = 0
 var turnTillAttack:int
 
 func _ready() -> void:
+	mouse_entered.connect(_on_mouse_entered)
+	mouse_exited.connect(_on_mouse_exited)
+	toggled.connect(_toggled)
 	add_to_group("Enemy")
 	# advance to the very first frame of the enter animation
 	animation_player.play("enter")
