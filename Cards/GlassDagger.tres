@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dkubh0tdbalnt" path="res://Actions/Action Classes/DestroySelfActionClass.gd" id="4_d1438"]
 [ext_resource type="Script" uid="uid://bk4mghx3y6csd" path="res://Actions/Action Classes/AddCardToDeckActionClass.gd" id="5_krcru"]
 [ext_resource type="Resource" uid="uid://be62oioos54j7" path="res://Cards/GlassShard.tres" id="5_mf0ej"]
+[ext_resource type="Texture2D" uid="uid://bsesoj04xolrd" path="res://Cards/CardTextures/glass_dagger.png" id="8_xuue8"]
 
 [sub_resource type="Resource" id="Resource_d1438"]
 resource_local_to_scene = true
@@ -34,14 +35,12 @@ doesTarget = false
 text = "[b]Destroy[/b] this card. "
 metadata/_custom_type_script = "uid://dkubh0tdbalnt"
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mf0ej"]
-
 [resource]
 resource_local_to_scene = true
 script = ExtResource("3_d1438")
 title = "Glass Dagger"
-texture = SubResource("PlaceholderTexture2D_mf0ej")
-price = 0
+texture = ExtResource("8_xuue8")
+price = 10
 maxTargets = 1
 targetAll = false
 targetRandom = false

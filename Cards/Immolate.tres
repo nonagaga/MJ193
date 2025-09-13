@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="CardDataClass" load_steps=6 format=3 uid="uid://87bqtjdiegce"]
+
+[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_16am1"]
+[ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_08geh"]
+[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_2fsvu"]
+[ext_resource type="Script" uid="uid://6elhjuwxsusx" path="res://Actions/Action Classes/MultiplyBurnActionClass.gd" id="3_08geh"]
+
+[sub_resource type="Resource" id="Resource_2fsvu"]
+resource_local_to_scene = true
+script = ExtResource("3_08geh")
+amount = 2.5
+maxTargets = 1
+doesTarget = true
+text = "Multiply [b]burn[/b] stacks on target enemy by [b]%s[/b]. "
+metadata/_custom_type_script = "uid://6elhjuwxsusx"
+
+[resource]
+script = ExtResource("3_2fsvu")
+title = ""
+price = 15
+maxTargets = 1
+targetAll = false
+targetRandom = false
+discardCost = 2
+drawActions = Array[ExtResource("2_08geh")]([])
+playActions = Array[ExtResource("2_08geh")]([SubResource("Resource_2fsvu")])
+discardActions = Array[ExtResource("2_08geh")]([])
+appliedTags = Array[ExtResource("1_16am1")]([])
+drawTags = Array[ExtResource("1_16am1")]([])
+playTags = Array[ExtResource("1_16am1")]([])
+discardTags = Array[ExtResource("1_16am1")]([])
+text = "Discard [b]%s[/b] cards: "
+metadata/_custom_type_script = "uid://88hsnkwkom7x"

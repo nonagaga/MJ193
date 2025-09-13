@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="CardDataClass" load_steps=6 format=3 uid="uid://5tyntjmwlxqm"]
+
+[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_0ieo6"]
+[ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_i7f1h"]
+[ext_resource type="Script" uid="uid://bboytkxfouftu" path="res://Actions/Action Classes/MultiplyWeaknessActionClass.gd" id="3_i7f1h"]
+[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_jogxl"]
+
+[sub_resource type="Resource" id="Resource_jogxl"]
+script = ExtResource("3_i7f1h")
+amount = 0.0
+maxTargets = 0
+doesTarget = false
+text = ""
+metadata/_custom_type_script = "uid://bboytkxfouftu"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("3_jogxl")
+title = ""
+price = 5
+maxTargets = 1
+targetAll = false
+targetRandom = false
+discardCost = 0
+drawActions = Array[ExtResource("2_i7f1h")]([])
+playActions = Array[ExtResource("2_i7f1h")]([SubResource("Resource_jogxl")])
+discardActions = Array[ExtResource("2_i7f1h")]([])
+appliedTags = Array[ExtResource("1_0ieo6")]([])
+drawTags = Array[ExtResource("1_0ieo6")]([])
+playTags = Array[ExtResource("1_0ieo6")]([])
+discardTags = Array[ExtResource("1_0ieo6")]([])
+text = "Multiply [b]Weakened[/b] stacks on target enemy by [b]%s[/b]."
+metadata/_custom_type_script = "uid://88hsnkwkom7x"

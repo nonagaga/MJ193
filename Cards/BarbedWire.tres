@@ -1,0 +1,46 @@
+[gd_resource type="Resource" script_class="CardDataClass" load_steps=9 format=3 uid="uid://cqb6uxyjqii5"]
+
+[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_2gibj"]
+[ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_4bm8m"]
+[ext_resource type="Script" uid="uid://dt75l8sg55rex" path="res://Actions/Action Classes/SelfDamageActionClass.gd" id="3_pqwjx"]
+[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_ssreu"]
+[ext_resource type="Script" uid="uid://bg5b3xot1fto5" path="res://Actions/Action Classes/DamageActionClass.gd" id="4_ucmg0"]
+[ext_resource type="Texture2D" uid="uid://c8qos1fqlhy7g" path="res://Cards/CardTextures/freeze.png" id="6_pqwjx"]
+
+[sub_resource type="Resource" id="Resource_3wxfh"]
+resource_local_to_scene = true
+script = ExtResource("3_pqwjx")
+amount = 2
+maxTargets = 0
+doesTarget = false
+text = "When this card is [b]drawn[/b] take [b]%s[/b] damage. "
+metadata/_custom_type_script = "uid://dt75l8sg55rex"
+
+[sub_resource type="Resource" id="Resource_ma1lb"]
+resource_local_to_scene = true
+script = ExtResource("4_ucmg0")
+damage = 8
+maxTargets = 1
+doesTarget = true
+text = "Deal [b]%s[/b] damage to target enemy."
+metadata/_custom_type_script = "uid://bg5b3xot1fto5"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("3_ssreu")
+title = "Barbed Wire"
+texture = ExtResource("6_pqwjx")
+price = 5
+maxTargets = 0
+targetAll = false
+targetRandom = false
+discardCost = 0
+drawActions = Array[ExtResource("2_4bm8m")]([SubResource("Resource_3wxfh"), SubResource("Resource_ma1lb")])
+playActions = Array[ExtResource("2_4bm8m")]([])
+discardActions = Array[ExtResource("2_4bm8m")]([])
+appliedTags = Array[ExtResource("1_2gibj")]([])
+drawTags = Array[ExtResource("1_2gibj")]([])
+playTags = Array[ExtResource("1_2gibj")]([])
+discardTags = Array[ExtResource("1_2gibj")]([])
+text = ""
+metadata/_custom_type_script = "uid://88hsnkwkom7x"

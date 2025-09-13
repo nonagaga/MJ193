@@ -1,14 +1,15 @@
-[gd_resource type="Resource" script_class="CardDataClass" load_steps=6 format=3 uid="uid://be62oioos54j7"]
+[gd_resource type="Resource" script_class="CardDataClass" load_steps=7 format=3 uid="uid://be62oioos54j7"]
 
 [ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_kbg0k"]
 [ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_sajb0"]
 [ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_gk8jj"]
 [ext_resource type="Script" uid="uid://bg5b3xot1fto5" path="res://Actions/Action Classes/DamageActionClass.gd" id="3_sajb0"]
+[ext_resource type="Texture2D" uid="uid://ch81q6cnlyyli" path="res://Cards/CardTextures/glass_shard.png" id="5_gk8jj"]
 
 [sub_resource type="Resource" id="Resource_gk8jj"]
 resource_local_to_scene = true
 script = ExtResource("3_sajb0")
-damage = 2
+damage = 3
 maxTargets = 1
 doesTarget = true
 text = "Deal [b]%s damage[/b] to target enemy."
@@ -18,6 +19,7 @@ metadata/_custom_type_script = "uid://bg5b3xot1fto5"
 resource_local_to_scene = true
 script = ExtResource("3_gk8jj")
 title = "Glass Shard"
+texture = ExtResource("5_gk8jj")
 price = 0
 maxTargets = 0
 targetAll = false

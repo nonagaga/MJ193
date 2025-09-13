@@ -27,6 +27,8 @@ signal select_targets(maxTar:int,card:CardDataClass)
 signal card_played(card:CardDataClass)
 signal force_discard(amount:int)
 signal normal_discard(amount:int)
+signal grave_to_deck(amount:int)
+signal grave_to_hand(amount:int)
 var selectingTargets:bool = false
 
 @export var text:String
