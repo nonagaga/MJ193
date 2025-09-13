@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 class_name Enemy
 @export var maxHP:int
 @export var hp:int

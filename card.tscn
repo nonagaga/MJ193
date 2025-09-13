@@ -58,6 +58,7 @@ offset_bottom = -300.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_q5obu")
+expand_mode = 1
 stretch_mode = 5
 
 [node name="Text" type="RichTextLabel" parent="CardOffset"]
@@ -90,3 +91,15 @@ mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "Card Title"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -202.0
+offset_right = 202.0
+offset_bottom = 40.0
+
+[node name="Price" type="Label" parent="PanelContainer"]
+layout_mode = 2
+text = "1"
+horizontal_alignment = 1
