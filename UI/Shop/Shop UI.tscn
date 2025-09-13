@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cl7cyofrusswf"]
+[gd_scene load_steps=11 format=3 uid="uid://cl7cyofrusswf"]
 
 [ext_resource type="Script" uid="uid://4ex3ffg63dk4" path="res://UI/Shop/shop_ui.gd" id="1_ms080"]
 [ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="2_h84ll"]
@@ -7,7 +7,6 @@
 [ext_resource type="Resource" uid="uid://dxtxxly6vbto3" path="res://Cards/FaithlessLooting.tres" id="5_e6pne"]
 [ext_resource type="Resource" uid="uid://c0b3rwaho0s1r" path="res://Cards/GlassDagger.tres" id="5_ut1vs"]
 [ext_resource type="Resource" uid="uid://dya6axv6ovy6i" path="res://Cards/Snowball.tres" id="6_4w3dd"]
-[ext_resource type="Resource" uid="uid://be62oioos54j7" path="res://Cards/GlassShard.tres" id="6_no8ak"]
 [ext_resource type="Resource" uid="uid://cfwbtegsgysth" path="res://Cards/Kneecap.tres" id="7_ywfqb"]
 [ext_resource type="Resource" uid="uid://87kgyaemmdqe" path="res://Cards/StabCard.tres" id="9_hrdqk"]
 [ext_resource type="Resource" uid="uid://cbo21pu0adocn" path="res://Cards/Zap.tres" id="10_0h5cs"]
@@ -20,7 +19,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ms080")
-shop_deck = Array[ExtResource("2_h84ll")]([ExtResource("4_vxfwk"), ExtResource("5_e6pne"), ExtResource("5_ut1vs"), ExtResource("6_no8ak"), ExtResource("7_ywfqb"), ExtResource("6_4w3dd"), ExtResource("9_hrdqk"), ExtResource("10_0h5cs")])
+shop_deck = Array[ExtResource("2_h84ll")]([ExtResource("4_vxfwk"), ExtResource("5_e6pne"), ExtResource("5_ut1vs"), ExtResource("7_ywfqb"), ExtResource("6_4w3dd"), ExtResource("9_hrdqk"), ExtResource("10_0h5cs")])
 buy_button = NodePath("VBoxContainer/Buy")
 
 [node name="ColorRect" type="ColorRect" parent="."]

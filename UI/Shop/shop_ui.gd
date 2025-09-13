@@ -30,12 +30,14 @@ func card_selected(ui:CardUI):
 		current_sel = ui
 	else:
 		current_sel = null
+		not_enough_money()
 
 func _on_card_buy(ui:CardUI):
 	current_sel = null
 	Globals.deck.append(buy_slots[ui])
 	buy_slots.erase(ui)
 	ui.queue_free()
+	card_bought()
 	add_new_card()
 
 func fill_shop():
@@ -55,3 +57,9 @@ func create_card_UI(card_data:CardDataClass):
 	new_card_instance.selected.connect(card_selected.bind(new_card_instance))
 	new_card_instance.custom_minimum_size.x = 500
 	return new_card_instance
+
+func card_bought():
+	$PanelContainer/RichTextLabel.text = "Thank you for your purchase"
+
+func not_enough_money():
+	$PanelContainer/RichTextLabel.text = "Uh you need more cash for that."
