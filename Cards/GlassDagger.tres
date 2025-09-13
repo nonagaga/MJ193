@@ -16,20 +16,20 @@ doesTarget = true
 text = "Deal [b]%s[/b] damage to target enemy. "
 metadata/_custom_type_script = "uid://bg5b3xot1fto5"
 
+[sub_resource type="Resource" id="Resource_mf0ej"]
+script = ExtResource("5_krcru")
+cardToAdd = ExtResource("5_mf0ej")
+maxTargets = null
+doesTarget = null
+text = "Add [b]1 Glass Shard Card[/b] to your deck. "
+metadata/_custom_type_script = "uid://bk4mghx3y6csd"
+
 [sub_resource type="Resource" id="Resource_krcru"]
 script = ExtResource("4_d1438")
 maxTargets = 0
 doesTarget = false
 text = "[b]Destroy[/b] this card. "
 metadata/_custom_type_script = "uid://dkubh0tdbalnt"
-
-[sub_resource type="Resource" id="Resource_mf0ej"]
-script = ExtResource("5_krcru")
-cardToAdd = ExtResource("5_mf0ej")
-maxTargets = null
-doesTarget = null
-text = "Add [b]1 Glass Shard Card[/b] to your deck."
-metadata/_custom_type_script = "uid://bk4mghx3y6csd"
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_mf0ej"]
 
@@ -43,7 +43,7 @@ targetAll = false
 targetRandom = false
 discardCost = 0
 drawActions = Array[ExtResource("2_ds67f")]([])
-playActions = Array[ExtResource("2_ds67f")]([SubResource("Resource_d1438"), SubResource("Resource_krcru"), SubResource("Resource_mf0ej")])
+playActions = Array[ExtResource("2_ds67f")]([SubResource("Resource_d1438"), SubResource("Resource_mf0ej"), SubResource("Resource_krcru")])
 discardActions = Array[ExtResource("2_ds67f")]([])
 appliedTags = Array[ExtResource("1_25r0k")]([])
 drawTags = Array[ExtResource("1_25r0k")]([])

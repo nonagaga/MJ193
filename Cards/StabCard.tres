@@ -13,6 +13,7 @@ texture = ExtResource("5_xt43l")
 price = 10
 maxTargets = 1
 targetAll = false
+targetRandom = false
 discardCost = 0
 drawActions = Array[ExtResource("1_x7xqd")]([])
 playActions = Array[ExtResource("1_x7xqd")]([ExtResource("2_5o5rd")])
