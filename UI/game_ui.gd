@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var cur_card_selected:Card = null
+var cur_card_selected:CardDataClass = null
 var card_packed = preload("res://card.tscn")
 @export var hand : HBoxContainer
 
@@ -15,7 +15,7 @@ func on_card_drawn(card:CardDataClass):
 		return
 	create_card(card).reparent(hand,false)
 
-func create_card(card:Card)->Control:
+func create_card(card:CardDataClass)->Control:
 	var new_card_instance = card_packed.instantiate()
 	new_card_instance.card_res = card
 	$Void.add_child(new_card_instance)
