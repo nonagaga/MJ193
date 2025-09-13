@@ -21,6 +21,8 @@ func start_game() -> void:
 		enemy.entersTrigger()
 		# wait a little between activating guys
 		await get_tree().create_timer(0.5).timeout
+	
+	# this is the main game loop
 	while game_state == GAME_STATE.PLAYING:
 		await player_turn()
 		for enemy : Enemy in enemy_list:
@@ -41,9 +43,6 @@ func check_player_death():
 	if Globals.hp <= 0:
 		game_state = GAME_STATE.LOSE
 		print("Game over!")
-
-
-
 
 func draw():
 	if !Globals.deck.is_empty():

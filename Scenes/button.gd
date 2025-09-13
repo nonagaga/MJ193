@@ -2,5 +2,5 @@ extends Button
 
 func _ready() -> void:
 	pressed.connect(func():
-		Globals.scene_manager.transition_to("game","vert_wipe")
+		Globals.scene_manager.transition_to("game","default")
 		)
