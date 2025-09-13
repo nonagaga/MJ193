@@ -6,6 +6,7 @@ class_name Card
 @export var price:int = 0
 #how many enemies must this card target
 @export var maxTargets:int = 0
+@export var targetAll:bool
 #number of other cards that must be discarded to play this card
 @export var discardCost:int = 0
 @export_group("Card Effects")

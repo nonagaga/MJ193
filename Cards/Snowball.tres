@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Card" load_steps=4 format=3 uid="uid://dya6axv6ovy6i"]
+
+[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_ypec3"]
+[ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_s72aa"]
+[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_xh0n7"]
+
+[resource]
+script = ExtResource("3_xh0n7")
+title = ""
+price = 0
+maxTargets = 0
+discardCost = 0
+drawActions = Array[ExtResource("2_s72aa")]([])
+playActions = Array[ExtResource("2_s72aa")]([])
+discardActions = Array[ExtResource("2_s72aa")]([])
+appliedTags = Array[ExtResource("1_ypec3")]([])
+drawTags = Array[ExtResource("1_ypec3")]([])
+playTags = Array[ExtResource("1_ypec3")]([])
+discardTags = Array[ExtResource("1_ypec3")]([])
+metadata/_custom_type_script = "uid://88hsnkwkom7x"

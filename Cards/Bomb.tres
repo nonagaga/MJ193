@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://mbl6rpbvv83c"]
+
+[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_s4opk"]
+[ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_plh11"]
+[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_3ati8"]
+[ext_resource type="Script" uid="uid://dnof4oqo6fghe" path="res://Actions/Action Classes/BurnActionClass.gd" id="3_plh11"]
+
+[sub_resource type="Resource" id="Resource_3ati8"]
+script = ExtResource("3_plh11")
+burnStacks = 3
+maxTargets = 0
+doesTarget = false
+text = "Apply [b]%s burn[/b] stacks to all enemies. "
+metadata/_custom_type_script = "uid://dnof4oqo6fghe"
+
+[resource]
+script = ExtResource("3_3ati8")
+title = "Bomb"
+price = 0
+maxTargets = 0
+discardCost = 0
+drawActions = Array[ExtResource("2_plh11")]([])
+playActions = Array[ExtResource("2_plh11")]([SubResource("Resource_3ati8")])
+discardActions = Array[ExtResource("2_plh11")]([])
+appliedTags = Array[ExtResource("1_s4opk")]([])
+drawTags = Array[ExtResource("1_s4opk")]([])
+playTags = Array[ExtResource("1_s4opk")]([])
+discardTags = Array[ExtResource("1_s4opk")]([])
+metadata/_custom_type_script = "uid://88hsnkwkom7x"
