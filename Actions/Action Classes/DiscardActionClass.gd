@@ -4,7 +4,7 @@ class_name DiscardAction
 
 func resolve(targets:Array[Enemy]):
 	for i in range(discNum):
-		await Globals.GameManager.discard()
+		card.normal_discard.emit(discNum)
 
 func updateText():
 	actualText = text % str(discNum)

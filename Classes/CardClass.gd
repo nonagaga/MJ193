@@ -25,6 +25,8 @@ class_name CardDataClass
 @export_group("")
 signal select_targets(maxTar:int,card:CardDataClass)
 signal card_played(card:CardDataClass)
+signal force_discard(amount:int)
+signal normal_discard(amount:int)
 var selectingTargets:bool = false
 
 var text:String
@@ -55,6 +57,7 @@ func drawEffect():
 
 #when played execute all play effects
 func playEffect():
+	Globals.gameManager.discard(self)
 	if targetRandom == true:
 		for i in range(maxTargets):
 			targets.append(Globals.gameManager.enemy_list.pick_random())
@@ -107,7 +110,7 @@ func canPlayCard() -> Error:
 			if Globals.hand.size() >= discardCost:
 				#discard the cards
 				for i in range(discardCost):
-					Globals.gameManager.discard()
+					force_discard.emit(discardCost)
 			else:
 				#add can't play card function here
 				return FAILED

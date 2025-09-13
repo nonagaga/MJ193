@@ -51,8 +51,7 @@ func draw():
 		card_drawn.emit(card)
 		return card
 
-func discard():
-	var card:CardDataClass
+func discard(card:CardDataClass):
 	Globals.discard.append(card)
 	Globals.hand.erase(card)
 	card.discardEffect()
