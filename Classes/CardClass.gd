@@ -99,7 +99,6 @@ func compileCardText():
 		text += i.actualText
 	
 func playCard():
-	card_played.emit(self)
 	playEffect()
 	Globals.discard.append(self)
 	Globals.hand.erase(self)
@@ -129,6 +128,6 @@ func selectCard():
 func doesCardTarget():
 	if !targetAll && maxTargets >0:
 		#tell the UI to select targets for this card
-		select_targets.emit(maxTargets,self)
+		return true
 	else:
-		playCard()
+		false

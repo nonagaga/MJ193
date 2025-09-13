@@ -20,20 +20,27 @@ func on_card_drawn(card:CardDataClass):
 	create_card(card).reparent(hand,false)
 
 func create_card(card:CardDataClass)->Control:
-	var new_card_instance = card_packed.instantiate()
+	var new_card_instance = card_packed.new()
 	new_card_instance.card_res = card
 	$Void.add_child(new_card_instance)
 	return new_card_instance
 
+func enter_target_mode():
+	for i in get_tree().get_nodes_in_group("Enemy"):
+		i.enabled = true
+		i.target_highlight.visible = true
+
 func card_selected(item:Control):
+	print("yipee")
 	if cur_card_selected!=null:
-		pass
+		if cur_card_selected.doesCardTarget():
+			enter_target_mode()
 
 func deselect_card(item:Control):
 	pass
 
 func _on_play_pressed() -> void:
-	##remove it from hand
+	cur_card_selected.playCard()
 	pass # Replace with function body.
 
 
