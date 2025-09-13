@@ -30,6 +30,7 @@ signal force_discard(amount:int)
 signal normal_discard(amount:int)
 signal grave_to_deck(amount:int)
 signal grave_to_hand(amount:int)
+var displayText:String
 var selectingTargets:bool = false
 
 @export var text:String
@@ -87,16 +88,17 @@ func applyTag(tag:Tag):
 
 #updates  Text
 func compileCardText():
-	text = text%discardCost
+	displayText = ""
+	displayText = text%discardCost
 	for i in drawActions:
 		i.updateText()
-		text += i.actualText
+		displayText += i.actualText
 	for i in playActions:
 		i.updateText()
-		text += i.actualText
+		displayText += i.actualText
 	for i in discardActions:
 		i.updateText()
-		text += i.actualText
+		displayText += i.actualText
 	
 func playCard():
 	playEffect()

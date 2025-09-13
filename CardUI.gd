@@ -28,7 +28,7 @@ func _ready() -> void:
 	mouse_exited.connect(_on_mouse_exited)
 	title.text = card_res.title
 	card_texture.texture = card_res.texture
-	text.text = card_res.text
+	text.text = card_res.displayText
 	price_text.text = str(card_res.price)
 
 func _on_mouse_entered():

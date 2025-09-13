@@ -20,8 +20,8 @@ func on_card_drawn(card:CardDataClass):
 	create_card(card).reparent(hand,false)
 
 func create_card(card:CardDataClass)->Control:
-	var new_card_instance = card_packed.new()
-	new_card_instance.card_res = card
+	var new_card_instance = card_packed.instantiate()
+	new_card_instance.card_res = card.duplicate()
 	$Void.add_child(new_card_instance)
 	return new_card_instance
 
