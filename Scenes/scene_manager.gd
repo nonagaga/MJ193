@@ -48,4 +48,5 @@ func transition_to(scene_name : String, transition_name : String = "default") ->
 	
 	transition_instance.transition_out()
 	await transition_instance.transitioned_out
+	transition_instance.queue_free()
 	transition_finished.emit()
