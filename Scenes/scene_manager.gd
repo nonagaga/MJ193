@@ -1,6 +1,7 @@
 class_name SceneManager extends Node2D
 
 signal scene_changed(scene_name : String)
+signal transition_finished()
 
 @export var scene_list : Dictionary[String, PackedScene]
 @export var trans_list : Dictionary[String, PackedScene]
@@ -43,7 +44,8 @@ func transition_to(scene_name : String, transition_name : String = "default") ->
 		
 	current_scene = new_scene.instantiate()
 	add_child(current_scene)
-	transition_instance.transition_out()
-	
 	scene_changed.emit(scene_name)
 	
+	transition_instance.transition_out()
+	await transition_instance.transitioned_out
+	transition_finished.emit()

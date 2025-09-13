@@ -1,19 +1,44 @@
-[gd_scene load_steps=0 format=3 uid="uid://dupy1f8fboept"]
+[gd_scene load_steps=4 format=3 uid="uid://dupy1f8fboept"]
 
-[node name="Game" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://coc0aqafwqn04" path="res://Environment/temp_background.png" id="1_cok2q"]
+[ext_resource type="Script" uid="uid://dniyjxmmo5q0i" path="res://GameManager.gd" id="1_nfvl4"]
+[ext_resource type="PackedScene" uid="uid://byearha2okcgk" path="res://UI/Enemy Element/CardShark.tscn" id="2_tuxhd"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("end_turn_button", "enemies")]
+script = ExtResource("1_nfvl4")
+end_turn_button = NodePath("UI/End Turn")
+enemies = NodePath("Enemies")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
-anchors_preset = 14
-anchor_top = 0.5
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="Background"]
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -34.5
-offset_bottom = 34.5
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/normal_font_size = 50
-bbcode_enabled = true
-text = "[center]Game"
-fit_content = true
+texture = ExtResource("1_cok2q")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource("2_tuxhd")]
+position = Vector2(1362, 410)
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource("2_tuxhd")]
+position = Vector2(1048, 418)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="End Turn" type="Button" parent="UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8.0
+offset_top = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 100
+text = "End Turn?"
