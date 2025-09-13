@@ -58,16 +58,21 @@ offset_bottom = 647.0
 scale = Vector2(0.5, 0.5)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-anchor_left = 0.859896
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.773958
 anchor_top = 0.798148
-anchor_right = 0.900521
-anchor_bottom = 0.835185
+anchor_right = 0.941667
+anchor_bottom = 0.90463
 metadata/_edit_use_anchors_ = true
 
 [node name="Buy" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+disabled = true
 text = "Buy Card"
+
+[node name="Increase Deck Size" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 
 [node name="Quit" type="Button" parent="."]
 layout_mode = 1
@@ -88,4 +93,5 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [connection signal="pressed" from="VBoxContainer/Buy" to="." method="buy_selected"]
+[connection signal="pressed" from="VBoxContainer/Increase Deck Size" to="." method="increase_deck_size"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

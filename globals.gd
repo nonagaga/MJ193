@@ -4,7 +4,9 @@ var hp:int
 @export var maxDeckSize:int = 21
 @export var deck:Array[CardDataClass]
 @export var discard:Array[CardDataClass]
-var money:int = 0
+var money:int = 10000
+var deck_increase_price:int = 40
+const DECKINCREASEAMT:int = 3
 var hand:Array[CardDataClass]
 var gameManager
 var scene_manager : SceneManager
