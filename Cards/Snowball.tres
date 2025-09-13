@@ -1,17 +1,27 @@
-[gd_resource type="Resource" script_class="Card" load_steps=4 format=3 uid="uid://dya6axv6ovy6i"]
+[gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://dya6axv6ovy6i"]
 
 [ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_ypec3"]
 [ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_s72aa"]
+[ext_resource type="Script" uid="uid://conym5rpk6q1q" path="res://Actions/Action Classes/FreezeActionClass.gd" id="3_s72aa"]
 [ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_xh0n7"]
+
+[sub_resource type="Resource" id="Resource_xh0n7"]
+script = ExtResource("3_s72aa")
+duration = 1
+maxTargets = 1
+doesTarget = true
+text = "[b]Freeze[/b] target enemy for [b]%s[/b] turns."
+metadata/_custom_type_script = "uid://conym5rpk6q1q"
 
 [resource]
 script = ExtResource("3_xh0n7")
 title = ""
 price = 0
-maxTargets = 0
+maxTargets = 1
+targetAll = false
 discardCost = 0
 drawActions = Array[ExtResource("2_s72aa")]([])
-playActions = Array[ExtResource("2_s72aa")]([])
+playActions = Array[ExtResource("2_s72aa")]([SubResource("Resource_xh0n7")])
 discardActions = Array[ExtResource("2_s72aa")]([])
 appliedTags = Array[ExtResource("1_ypec3")]([])
 drawTags = Array[ExtResource("1_ypec3")]([])

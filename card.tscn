@@ -43,6 +43,7 @@ texture = SubResource("PlaceholderTexture2D_q5obu")
 expand_mode = 3
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = -193.0
 offset_top = -279.0
 offset_right = 193.0

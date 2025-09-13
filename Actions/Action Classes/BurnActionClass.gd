@@ -19,3 +19,6 @@ func burn(target):
 	burn.dmg = burnStacks
 	burn.duration = 3
 	target.burns.append(burn)
+
+func updateText():
+	actualText = text % str(burnStacks)

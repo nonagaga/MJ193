@@ -4,8 +4,9 @@ class_name Card
 @export var texture:Texture2D
 #how expensive is this to buy from the shop
 @export var price:int = 0
-#how many enemies must this card target
+#how many enemies can this card target
 @export var maxTargets:int = 0
+#does the card target all enemies
 @export var targetAll:bool
 #number of other cards that must be discarded to play this card
 @export var discardCost:int = 0
