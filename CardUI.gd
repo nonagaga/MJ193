@@ -4,11 +4,11 @@ signal selected
 signal deselected
 
 @export var card_res:CardDataClass
-@onready var texture_rect: TextureRect = $CardOffset/TextureRect
-@onready var card_texture: TextureRect = $CardOffset/CardTexture
-@onready var text: RichTextLabel = $CardOffset/Text
-@onready var title: RichTextLabel = $CardOffset/Title
-@onready var highlight: ColorRect = $CardOffset/Highlight
+@onready var texture_rect: TextureRect = $TextureRect
+@onready var card_texture: TextureRect = $CardTexture
+@onready var text: RichTextLabel = $Text
+@onready var title: RichTextLabel = $Title
+@onready var highlight: ColorRect = $Highlight
 @onready var price_text:Label = $PanelContainer/Price
 
 func _ready() -> void:

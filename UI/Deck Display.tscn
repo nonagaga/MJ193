@@ -1,12 +1,17 @@
-[gd_scene load_steps=0 format=3 uid="uid://cthnoyb4c4aum"]
+[gd_scene load_steps=2 format=3 uid="uid://cthnoyb4c4aum"]
 
-[node name="DeckDisplay" type="Control"]
+[ext_resource type="Script" uid="uid://3l45ae637gra" path="res://UI/deck_display.gd" id="1_3w7ku"]
+
+[node name="DeckDisplay" type="Control" node_paths=PackedStringArray("remove_button", "grid_cont")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3w7ku")
+remove_button = NodePath("HBoxContainer/VBoxContainer/Remove")
+grid_cont = NodePath("HBoxContainer/ScrollContainer/GridContainer")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -25,12 +30,37 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HBoxContainer"]
+clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
+horizontal_scroll_mode = 0
 
 [node name="GridContainer" type="GridContainer" parent="HBoxContainer/ScrollContainer"]
 layout_mode = 2
+columns = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+
+[node name="Card Description" type="RichTextLabel" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Remove" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Remove Selected"
+
+[node name="Close" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Close Deck View"
+
+[node name="Void" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Remove" to="." method="remove"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Close" to="." method="close"]
