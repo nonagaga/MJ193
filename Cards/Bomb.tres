@@ -19,6 +19,7 @@ title = "Bomb"
 price = 0
 maxTargets = 0
 targetAll = false
+targetRandom = false
 discardCost = 0
 drawActions = Array[ExtResource("2_plh11")]([])
 playActions = Array[ExtResource("2_plh11")]([SubResource("Resource_3ati8")])

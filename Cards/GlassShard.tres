@@ -19,6 +19,7 @@ title = "Glass Shard"
 price = 0
 maxTargets = 0
 targetAll = false
+targetRandom = false
 discardCost = 0
 drawActions = Array[ExtResource("2_sajb0")]([])
 playActions = Array[ExtResource("2_sajb0")]([SubResource("Resource_gk8jj")])
