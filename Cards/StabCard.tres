@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bs4cbal8fpet5" path="res://cardshark1.png" id="5_xt43l"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("2_s1e03")
 title = "Stab"
 texture = ExtResource("5_xt43l")
@@ -22,4 +23,5 @@ appliedTags = Array[ExtResource("1_5o5rd")]([])
 drawTags = Array[ExtResource("1_5o5rd")]([])
 playTags = Array[ExtResource("1_5o5rd")]([])
 discardTags = Array[ExtResource("1_5o5rd")]([])
+text = ""
 metadata/_custom_type_script = "uid://88hsnkwkom7x"

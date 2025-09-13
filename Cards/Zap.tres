@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dkubh0tdbalnt" path="res://Actions/Action Classes/DestroySelfActionClass.gd" id="4_8ncna"]
 
 [sub_resource type="Resource" id="Resource_1mpkq"]
+resource_local_to_scene = true
 script = ExtResource("3_5jblx")
 damage = 5
 maxTargets = 0
@@ -15,6 +16,7 @@ text = "If you [b]discard[/b] this card deal [b]%s[/b] damage to a rando enemy."
 metadata/_custom_type_script = "uid://bg5b3xot1fto5"
 
 [sub_resource type="Resource" id="Resource_8ncna"]
+resource_local_to_scene = true
 script = ExtResource("3_5jblx")
 damage = 5
 maxTargets = 1
@@ -23,6 +25,7 @@ text = "Deal [b]%s[/b] damage to a random enemy "
 metadata/_custom_type_script = "uid://bg5b3xot1fto5"
 
 [sub_resource type="Resource" id="Resource_ot2wr"]
+resource_local_to_scene = true
 script = ExtResource("4_8ncna")
 maxTargets = 0
 doesTarget = false
@@ -30,6 +33,7 @@ text = "If you would play this card destroy it instead. "
 metadata/_custom_type_script = "uid://dkubh0tdbalnt"
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("3_8ncna")
 title = "Zap"
 price = 0
@@ -44,4 +48,5 @@ appliedTags = Array[ExtResource("1_280fa")]([])
 drawTags = Array[ExtResource("1_280fa")]([])
 playTags = Array[ExtResource("1_280fa")]([])
 discardTags = Array[ExtResource("1_280fa")]([])
+text = ""
 metadata/_custom_type_script = "uid://88hsnkwkom7x"

@@ -29,7 +29,7 @@ signal force_discard(amount:int)
 signal normal_discard(amount:int)
 var selectingTargets:bool = false
 
-var text:String
+@export var text:String
 #array of enemies the card is targetting
 var targets:Array[Enemy]
 
@@ -44,6 +44,7 @@ func setUpCard():
 	for i in discardActions:
 		i.card = self
 	compileCardText()
+	print(text)
 
 #when drawn execute all draw effects
 func drawEffect():
@@ -83,6 +84,7 @@ func applyTag(tag:Tag):
 
 #updates  Text
 func compileCardText():
+	text = text%discardCost
 	for i in drawActions:
 		i.updateText()
 		text += i.actualText

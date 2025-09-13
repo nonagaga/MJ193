@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://26c1ya4mgglh" path="res://Actions/Action Classes/DrawActionClass.gd" id="1_p7gm2"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_p7gm2")
 drawNum = 2
 maxTargets = 0

@@ -1,11 +1,12 @@
 [gd_resource type="Resource" script_class="CardDataClass" load_steps=6 format=3 uid="uid://be62oioos54j7"]
 
-[ext_resource type="Script" path="res://Classes/TagClass.gd" id="1_kbg0k"]
+[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_kbg0k"]
 [ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_sajb0"]
 [ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_gk8jj"]
 [ext_resource type="Script" uid="uid://bg5b3xot1fto5" path="res://Actions/Action Classes/DamageActionClass.gd" id="3_sajb0"]
 
 [sub_resource type="Resource" id="Resource_gk8jj"]
+resource_local_to_scene = true
 script = ExtResource("3_sajb0")
 damage = 2
 maxTargets = 1
@@ -14,6 +15,7 @@ text = "Deal [b]%s damage[/b] to target enemy."
 metadata/_custom_type_script = "uid://bg5b3xot1fto5"
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("3_gk8jj")
 title = "Glass Shard"
 price = 0
@@ -28,4 +30,5 @@ appliedTags = Array[ExtResource("1_kbg0k")]([])
 drawTags = Array[ExtResource("1_kbg0k")]([])
 playTags = Array[ExtResource("1_kbg0k")]([])
 discardTags = Array[ExtResource("1_kbg0k")]([])
+text = ""
 metadata/_custom_type_script = "uid://88hsnkwkom7x"

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpp7r7l0fdpvc"]
+[gd_scene load_steps=6 format=3 uid="uid://dpp7r7l0fdpvc"]
 
 [ext_resource type="Script" uid="uid://bqbys4x3ry728" path="res://CardUI.gd" id="1_kikvd"]
+[ext_resource type="Resource" uid="uid://ivvnwut4t1q3" path="res://Cards/Rejuvenate.tres" id="2_q5obu"]
 [ext_resource type="Texture2D" uid="uid://cof6qdkvij7cr" path="res://mockupcard.png" id="3_q5obu"]
 
 [sub_resource type="Theme" id="Theme_rjlel"]
@@ -12,6 +13,7 @@ layout_mode = 3
 anchors_preset = 0
 focus_mode = 1
 script = ExtResource("1_kikvd")
+card_res = ExtResource("2_q5obu")
 
 [node name="CardOffset" type="Control" parent="."]
 layout_mode = 3

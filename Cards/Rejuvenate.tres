@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="CardDataClass" load_steps=6 format=3 uid="uid://ivvnwut4t1q3"]
+
+[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_w5tmv"]
+[ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_bqxlb"]
+[ext_resource type="Script" uid="uid://lxsgxov14l4v" path="res://Actions/Action Classes/HealActionClass.gd" id="3_bqxlb"]
+[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_tqbis"]
+
+[sub_resource type="Resource" id="Resource_tqbis"]
+resource_local_to_scene = true
+script = ExtResource("3_bqxlb")
+amount = 10
+maxTargets = 0
+doesTarget = false
+text = "[b]Heal %s.[/b] "
+metadata/_custom_type_script = "uid://lxsgxov14l4v"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("3_tqbis")
+title = ""
+price = 0
+maxTargets = 0
+targetAll = false
+targetRandom = false
+discardCost = 2
+drawActions = Array[ExtResource("2_bqxlb")]([])
+playActions = Array[ExtResource("2_bqxlb")]([SubResource("Resource_tqbis")])
+discardActions = Array[ExtResource("2_bqxlb")]([])
+appliedTags = Array[ExtResource("1_w5tmv")]([])
+drawTags = Array[ExtResource("1_w5tmv")]([])
+playTags = Array[ExtResource("1_w5tmv")]([])
+discardTags = Array[ExtResource("1_w5tmv")]([])
+text = "Discard [b]%s[/b] cards: "
+metadata/_custom_type_script = "uid://88hsnkwkom7x"

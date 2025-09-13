@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_xh0n7"]
 
 [sub_resource type="Resource" id="Resource_xh0n7"]
+resource_local_to_scene = true
 script = ExtResource("3_s72aa")
 duration = 1
 maxTargets = 1
@@ -14,11 +15,13 @@ text = "[b]Freeze[/b] target enemy for [b]%s[/b] turns."
 metadata/_custom_type_script = "uid://conym5rpk6q1q"
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("3_xh0n7")
 title = ""
 price = 0
 maxTargets = 1
 targetAll = false
+targetRandom = false
 discardCost = 0
 drawActions = Array[ExtResource("2_s72aa")]([])
 playActions = Array[ExtResource("2_s72aa")]([SubResource("Resource_xh0n7")])
@@ -27,4 +30,5 @@ appliedTags = Array[ExtResource("1_ypec3")]([])
 drawTags = Array[ExtResource("1_ypec3")]([])
 playTags = Array[ExtResource("1_ypec3")]([])
 discardTags = Array[ExtResource("1_ypec3")]([])
+text = ""
 metadata/_custom_type_script = "uid://88hsnkwkom7x"

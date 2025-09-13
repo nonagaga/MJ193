@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bg5b3xot1fto5" path="res://Actions/Action Classes/DamageActionClass.gd" id="1_ljql4"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_ljql4")
 damage = 5
 maxTargets = 0
