@@ -25,6 +25,7 @@ class_name CardDataClass
 @export_group("")
 signal select_targets(maxTar:int,card:CardDataClass)
 signal card_played(card:CardDataClass)
+signal draw(amount:int)
 signal force_discard(amount:int)
 signal normal_discard(amount:int)
 signal grave_to_deck(amount:int)
