@@ -22,6 +22,7 @@ class_name CardDataClass
 @export var discardTags:Array[Tag]
 @export_group("")
 signal select_targets(maxTar:int,card:CardDataClass)
+signal card_played(card:CardDataClass)
 var selectingTargets:bool = false
 
 var text:String
@@ -79,6 +80,7 @@ func compileCardText():
 		text += i.actualText
 	
 func playCard():
+	card_played.emit(self)
 	playEffect()
 	Globals.discard.append(self)
 	Globals.hand.erase(self)
