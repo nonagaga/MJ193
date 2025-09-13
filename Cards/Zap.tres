@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="CardDataClass" load_steps=9 format=3 uid="uid://cbo21pu0adocn"]
+
+[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_280fa"]
+[ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_5jblx"]
+[ext_resource type="Script" uid="uid://bg5b3xot1fto5" path="res://Actions/Action Classes/DamageActionClass.gd" id="3_5jblx"]
+[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_8ncna"]
+[ext_resource type="Script" uid="uid://dkubh0tdbalnt" path="res://Actions/Action Classes/DestroySelfActionClass.gd" id="4_8ncna"]
+
+[sub_resource type="Resource" id="Resource_1mpkq"]
+script = ExtResource("3_5jblx")
+damage = 5
+maxTargets = 0
+doesTarget = false
+text = "If you [b]discard[/b] this card deal [b]%s[/b] damage to a rando enemy."
+metadata/_custom_type_script = "uid://bg5b3xot1fto5"
+
+[sub_resource type="Resource" id="Resource_8ncna"]
+script = ExtResource("3_5jblx")
+damage = 5
+maxTargets = 1
+doesTarget = false
+text = "Deal [b]%s[/b] damage to a random enemy "
+metadata/_custom_type_script = "uid://bg5b3xot1fto5"
+
+[sub_resource type="Resource" id="Resource_ot2wr"]
+script = ExtResource("4_8ncna")
+maxTargets = 0
+doesTarget = false
+text = "If you would play this card destroy it instead. "
+metadata/_custom_type_script = "uid://dkubh0tdbalnt"
+
+[resource]
+script = ExtResource("3_8ncna")
+title = "Zap"
+price = 0
+maxTargets = 1
+targetAll = false
+targetRandom = true
+discardCost = 0
+drawActions = Array[ExtResource("2_5jblx")]([SubResource("Resource_8ncna")])
+playActions = Array[ExtResource("2_5jblx")]([SubResource("Resource_ot2wr")])
+discardActions = Array[ExtResource("2_5jblx")]([SubResource("Resource_1mpkq")])
+appliedTags = Array[ExtResource("1_280fa")]([])
+drawTags = Array[ExtResource("1_280fa")]([])
+playTags = Array[ExtResource("1_280fa")]([])
+discardTags = Array[ExtResource("1_280fa")]([])
+metadata/_custom_type_script = "uid://88hsnkwkom7x"

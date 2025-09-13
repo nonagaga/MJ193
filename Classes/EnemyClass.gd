@@ -11,6 +11,7 @@ class_name Enemy
 @export var theme_song_name : String
 var frozen:int=0
 var burns:Array[Burn]
+var weakened:int = 0
 @export var maxTurnTillAttack:int
 var turnTillAttack:int
 
@@ -36,7 +37,10 @@ func attackTrigger():
 	if frozen<1:
 		if turnTillAttack == 0:
 			turnTillAttack = maxTurnTillAttack
-			Globals.hp -= dmg
+			if weakened >0:
+				Globals.hp -= dmg/2
+			else:
+				Globals.hp -= dmg
 			if animation_player:
 				animation_player.play("attack")
 				await animation_player.animation_finished

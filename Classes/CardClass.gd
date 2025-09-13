@@ -8,6 +8,8 @@ class_name CardDataClass
 @export var maxTargets:int = 0
 #does the card target all enemies
 @export var targetAll:bool
+#does this card target random enemies
+@export var targetRandom:bool
 #number of other cards that must be discarded to play this card
 @export var discardCost:int = 0
 @export_group("Card Effects")
@@ -43,6 +45,9 @@ func setUpCard():
 
 #when drawn execute all draw effects
 func drawEffect():
+	if targetRandom == true:
+		for i in range(maxTargets):
+			targets.append(Globals.gameManager.enemy_list.pick_random())
 	for i:Tag in drawTags:
 		await i.resolve()
 	for i:Action in drawActions:
@@ -50,6 +55,9 @@ func drawEffect():
 
 #when played execute all play effects
 func playEffect():
+	if targetRandom == true:
+		for i in range(maxTargets):
+			targets.append(Globals.gameManager.enemy_list.pick_random())
 	for i:Tag in playTags:
 		await i.resolve()
 	for i:Action in playActions:
@@ -57,6 +65,9 @@ func playEffect():
 
 #when discarded execute all discard effects
 func discardEffect():
+	if targetRandom == true:
+		for i in range(maxTargets):
+			targets.append(Globals.gameManager.enemy_list.pick_random())
 	for i:Tag in discardTags:
 		await i.resolve()
 	for i:Action in discardActions:
