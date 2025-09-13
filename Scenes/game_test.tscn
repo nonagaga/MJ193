@@ -1,14 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dupy1f8fboept"]
+[gd_scene load_steps=4 format=3 uid="uid://dupy1f8fboept"]
 
-[ext_resource type="Script" uid="uid://dniyjxmmo5q0i" path="res://GameManager.gd" id="1_nfvl4"]
 [ext_resource type="Texture2D" uid="uid://dbqii5kw37wq" path="res://Environment/background.png" id="2_h07e4"]
 [ext_resource type="PackedScene" uid="uid://byearha2okcgk" path="res://UI/Enemy Element/CardShark.tscn" id="2_tuxhd"]
-[ext_resource type="PackedScene" uid="uid://dpp7r7l0fdpvc" path="res://card.tscn" id="4_h07e4"]
+[ext_resource type="PackedScene" uid="uid://cgq0lkaaw5wyd" path="res://UI/Game UI.tscn" id="5_npqdh"]
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("end_turn_button", "enemies")]
-script = ExtResource("1_nfvl4")
-end_turn_button = NodePath("UI/End Turn")
-enemies = NodePath("Enemies")
+[node name="Game" type="Node2D"]
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -46,23 +42,4 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 100
 text = "End Turn?"
 
-[node name="Card" parent="UI" instance=ExtResource("4_h07e4")]
-offset_left = 967.0
-offset_top = 1088.0
-offset_right = 967.0
-offset_bottom = 1088.0
-scale = Vector2(0.7, 0.7)
-
-[node name="Card2" parent="UI" instance=ExtResource("4_h07e4")]
-offset_left = 600.0
-offset_top = 1092.0
-offset_right = 600.0
-offset_bottom = 1092.0
-scale = Vector2(0.7, 0.7)
-
-[node name="Card3" parent="UI" instance=ExtResource("4_h07e4")]
-offset_left = 233.0
-offset_top = 1095.0
-offset_right = 233.0
-offset_bottom = 1095.0
-scale = Vector2(0.7, 0.7)
+[node name="GameUi" parent="UI" instance=ExtResource("5_npqdh")]

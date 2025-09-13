@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Card" load_steps=6 format=3 uid="uid://mbl6rpbvv83c"]
 
-[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_s4opk"]
+[ext_resource type="Script" path="res://Classes/TagClass.gd" id="1_s4opk"]
 [ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_plh11"]
 [ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_3ati8"]
 [ext_resource type="Script" uid="uid://dnof4oqo6fghe" path="res://Actions/Action Classes/BurnActionClass.gd" id="3_plh11"]
@@ -18,6 +18,7 @@ script = ExtResource("3_3ati8")
 title = "Bomb"
 price = 0
 maxTargets = 0
+targetAll = false
 discardCost = 0
 drawActions = Array[ExtResource("2_plh11")]([])
 playActions = Array[ExtResource("2_plh11")]([SubResource("Resource_3ati8")])
