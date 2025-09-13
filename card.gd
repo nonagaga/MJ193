@@ -1,5 +1,5 @@
 extends Control
-@export var cardRes:Card
+@export var cardRes:CardDataClass
 @onready var card_texture: TextureRect = $CardTexture
 @onready var rich_text_label: RichTextLabel = $RichTextLabel
 

@@ -1,7 +1,7 @@
 extends Control
 
 var cur_card_selected:CardElem = null
-var card_packed:PackedScene = preload("res://UI/Card Element/Card.tscn")
+var card_packed:PackedScene = preload("res://UI/ Element/.tscn")
 
 @export var hand : HBoxContainer
 
@@ -11,12 +11,12 @@ func _ready()->void:
 	
 	on_card_drawn(load("res://Cards/StabCard.tres"))
 
-func on_card_drawn(card:Card):
+func on_card_drawn(card:CardDataClass):
 	if card == null:
 		return
 	create_card(card).reparent(hand,false)
 
-func create_card(card:Card)->CardElem:
+func create_card(card:CardDataClass)->CardElem:
 	var new_card_instance:CardElem = card_packed.instantiate()
 	new_card_instance.card_res = card
 	$Void.add_child(new_card_instance)

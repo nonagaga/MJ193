@@ -1,6 +1,6 @@
 extends Node
 
-signal card_drawn(card:Card)
+signal card_drawn(card:CardDataClass)
 enum GAME_STATE {WIN, LOSE, PLAYING}
 var game_state : GAME_STATE = GAME_STATE.PLAYING
 var enemy_list : Array[Enemy]
@@ -52,7 +52,7 @@ func draw():
 		return card
 
 func discard():
-	var card:Card
+	var card:CardDataClass
 	Globals.discard.append(card)
 	Globals.hand.erase(card)
 	card.discardEffect()
@@ -66,26 +66,6 @@ func removeCardFromDeck(card):
 
 func destroyCard(card):
 	card.die()
-
-func playCard(card:Card) -> Error:
-	#check if the card requires you to discard cards before playing it
-	if card.discardCost != 0:
-		#check if you have enough cards to discard to play the card
-		if Globals.hand.size() >= card.discardCost:
-			#discard the cards
-			for i in range(card.discardCost):
-				discard()
-		else:
-			#add can't play card function here
-			return FAILED
-	
-	#actually play the card here
-	card.playEffect()
-	Globals.discard.append(card)
-	Globals.hand.erase(card)
-	
-	check_room_cleared()
-	return OK
 
 func check_room_cleared():
 	if enemy_list.size() == 0:

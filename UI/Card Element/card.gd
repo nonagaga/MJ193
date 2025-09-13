@@ -1,7 +1,7 @@
 extends Control
 class_name CardElem
 
-@export var card_res:Card
+@export var card_res:CardDataClass
 
 @export var art:TextureRect
 @export var title:RichTextLabel

@@ -5,3 +5,6 @@
 [node name="Globals" type="Node"]
 script = ExtResource("1_f6yec")
 maxHP = 100
+maxDeckSize = null
+deck = null
+discard = null

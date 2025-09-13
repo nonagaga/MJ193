@@ -1,5 +1,5 @@
 extends Resource
-class_name Card
+class_name CardDataClass
 @export var title:String
 @export var texture:Texture2D
 #how expensive is this to buy from the shop
@@ -21,6 +21,8 @@ class_name Card
 @export var playTags:Array[Tag]
 @export var discardTags:Array[Tag]
 @export_group("")
+signal select_targets(maxTar:int,card:CardDataClass)
+var selectingTargets:bool = false
 
 var text:String
 #array of enemies the card is targetting
@@ -64,7 +66,7 @@ func applyTag(tag:Tag):
 	await tag.resolve()
 	appliedTags.append(tag)
 
-#updates Card Text
+#updates  Text
 func compileCardText():
 	for i in drawActions:
 		i.updateText()
@@ -76,3 +78,36 @@ func compileCardText():
 		i.updateText()
 		text += i.actualText
 	
+func playCard():
+	playEffect()
+	Globals.discard.append(self)
+	Globals.hand.erase(self)
+		
+	Globals.gameManager.check_room_cleared()
+
+func canPlayCard() -> Error:
+	#check if the card has play actions to actually play
+	if !playActions.is_empty():
+		#check if the card requires you to discard cards before playing it
+		if discardCost != 0:
+			#check if you have enough cards to discard to play the card
+			if Globals.hand.size() >= discardCost:
+				#discard the cards
+				for i in range(discardCost):
+					Globals.gameManager.discard()
+			else:
+				#add can't play card function here
+				return FAILED
+	
+	return OK
+
+func selectCard():
+	if canPlayCard():
+		doesCardTarget()
+
+func doesCardTarget():
+	if !targetAll && maxTargets >0:
+		#tell the UI to select targets for this card
+		select_targets.emit(maxTargets,self)
+	else:
+		playCard()
