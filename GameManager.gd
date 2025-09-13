@@ -4,6 +4,7 @@ signal card_drawn(card:CardDataClass)
 enum GAME_STATE {WIN, LOSE, PLAYING}
 var game_state : GAME_STATE = GAME_STATE.PLAYING
 var enemy_list : Array[Enemy]
+var target_list : Array[Enemy]
 @export var end_turn_button : Button
 @export var enemies : Node2D
 

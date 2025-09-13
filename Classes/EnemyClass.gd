@@ -1,4 +1,4 @@
-extends Control
+extends TextureButton
 class_name Enemy
 @export var maxHP:int
 @export var hp:int
@@ -9,6 +9,7 @@ class_name Enemy
 @export var animation_player : AnimationPlayer
 @export var theme_song : AudioStream
 @export var theme_song_name : String
+@export var target_highlight: TextureRect
 var frozen:int=0
 var burns:Array[Burn]
 var weakened:int = 0
@@ -16,6 +17,7 @@ var weakened:int = 0
 var turnTillAttack:int
 
 func _ready() -> void:
+	add_to_group("Enemy")
 	# advance to the very first frame of the enter animation
 	animation_player.play("enter")
 	animation_player.advance(0)
@@ -71,3 +73,19 @@ func entersTrigger():
 func damaged(dmg:int):
 	damagedTrigger()
 	hp -= dmg
+
+func _on_mouse_entered() -> void:
+	if !pressed:
+		target_highlight.modulate = Color(150,0,0,1)
+
+func _on_mouse_exited() -> void:
+	if !pressed:
+		target_highlight.modulate = Color(255,255,255,1)
+
+func _toggled(toggled_on:bool):
+	if toggled_on:
+		target_highlight.modulate = Color(255,0,0,1)
+		Globals.gameManager.target_list.append(self)
+	else:
+		target_highlight.modulate = Color(255,255,255,1)
+		Globals.gameManager.target_list.erase(self)

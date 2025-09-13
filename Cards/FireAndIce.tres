@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="CardDataClass" load_steps=8 format=3 uid="uid://csbe8lfg244lq"]
+
+[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_tlwws"]
+[ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_x28me"]
+[ext_resource type="Script" uid="uid://conym5rpk6q1q" path="res://Actions/Action Classes/FreezeActionClass.gd" id="3_23yp6"]
+[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_eiws1"]
+[ext_resource type="Script" uid="uid://dnof4oqo6fghe" path="res://Actions/Action Classes/BurnActionClass.gd" id="4_kryey"]
+
+[sub_resource type="Resource" id="Resource_5krp4"]
+resource_local_to_scene = true
+script = ExtResource("3_23yp6")
+duration = 1
+maxTargets = 2
+doesTarget = false
+text = "When this card is [b]discarded[/b], Apply [b]1 Freeze[/b] to [b]2[/b] random enemies."
+metadata/_custom_type_script = "uid://conym5rpk6q1q"
+
+[sub_resource type="Resource" id="Resource_arrj4"]
+resource_local_to_scene = true
+script = ExtResource("4_kryey")
+burnStacks = 3
+maxTargets = 2
+doesTarget = false
+text = "Apply 3 burn to 2 random enemies. "
+metadata/_custom_type_script = "uid://dnof4oqo6fghe"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("3_eiws1")
+title = "Fire & Ice"
+price = 15
+maxTargets = 2
+targetAll = false
+targetRandom = true
+discardCost = 0
+drawActions = Array[ExtResource("2_x28me")]([])
+playActions = Array[ExtResource("2_x28me")]([SubResource("Resource_arrj4")])
+discardActions = Array[ExtResource("2_x28me")]([SubResource("Resource_5krp4")])
+appliedTags = Array[ExtResource("1_tlwws")]([])
+drawTags = Array[ExtResource("1_tlwws")]([])
+playTags = Array[ExtResource("1_tlwws")]([])
+discardTags = Array[ExtResource("1_tlwws")]([])
+text = ""
+metadata/_custom_type_script = "uid://88hsnkwkom7x"
