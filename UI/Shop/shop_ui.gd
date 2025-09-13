@@ -28,7 +28,6 @@ func buy_selected():
 
 func update_increase_deck_size_button():
 	$"VBoxContainer/Increase Deck Size".text = "Increase Deck Size (%s moners)"%[Globals.deck_increase_price]
-	#on_money_changed()
 
 func on_money_changed():
 	$"VBoxContainer/Increase Deck Size".disabled = Globals.money<Globals.deck_increase_price
