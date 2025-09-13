@@ -1,0 +1,174 @@
+[gd_scene load_steps=14 format=3 uid="uid://dpp7r7l0fdpvc"]
+
+[ext_resource type="Script" uid="uid://bqbys4x3ry728" path="res://CardUI.gd" id="1_qh7ip"]
+[ext_resource type="Texture2D" uid="uid://cof6qdkvij7cr" path="res://mockupcard.png" id="2_u5mo3"]
+[ext_resource type="AudioStream" uid="uid://dcfhgxxv2rswj" path="res://Sound Effects/Draw 1.wav" id="3_goxeg"]
+[ext_resource type="AudioStream" uid="uid://cqxbpnmt4gefx" path="res://Sound Effects/Draw 2.wav" id="4_uehfq"]
+[ext_resource type="AudioStream" uid="uid://t4bj1ceg1lgu" path="res://Sound Effects/Draw 3.wav" id="5_7nm21"]
+[ext_resource type="AudioStream" uid="uid://cj5u321jk5qq2" path="res://Sound Effects/Draw 4.wav" id="6_66s06"]
+[ext_resource type="AudioStream" uid="uid://b21bd85wl6qgi" path="res://Sound Effects/Draw 5.wav" id="7_cjanw"]
+
+[sub_resource type="Theme" id="Theme_rjlel"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q5obu"]
+
+[sub_resource type="Animation" id="Animation_p5bke"]
+resource_name = "draw"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CardOffset:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_goxeg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CardOffset:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uehfq"]
+_data = {
+&"RESET": SubResource("Animation_goxeg"),
+&"draw": SubResource("Animation_p5bke")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hduc0"]
+random_pitch = 1.1
+streams_count = 5
+stream_0/stream = ExtResource("3_goxeg")
+stream_1/stream = ExtResource("4_uehfq")
+stream_2/stream = ExtResource("5_7nm21")
+stream_3/stream = ExtResource("6_66s06")
+stream_4/stream = ExtResource("7_cjanw")
+
+[node name="Card" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+focus_mode = 1
+script = ExtResource("1_qh7ip")
+
+[node name="CardOffset" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -240.0
+offset_top = -672.0
+offset_right = 240.0
+pivot_offset = Vector2(240, 672)
+mouse_filter = 1
+theme = SubResource("Theme_rjlel")
+
+[node name="Highlight" type="ColorRect" parent="CardOffset"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 17.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(1, 1, 1, 0.752941)
+
+[node name="TextureRect" type="TextureRect" parent="CardOffset"]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 672.0
+texture = ExtResource("2_u5mo3")
+
+[node name="CardTexture" type="TextureRect" parent="CardOffset"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 42.0
+offset_right = -47.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("PlaceholderTexture2D_q5obu")
+stretch_mode = 5
+
+[node name="Text" type="RichTextLabel" parent="CardOffset"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 54.0
+offset_top = -281.0
+offset_right = -55.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "This is the card text"
+
+[node name="Title" type="RichTextLabel" parent="CardOffset"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 47.0
+offset_top = 38.0
+offset_right = 47.0
+offset_bottom = 97.0
+grow_horizontal = 2
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "Card Title"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uehfq")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_hduc0")
+volume_db = 6.0

@@ -1,14 +1,16 @@
 extends Node
 
 signal card_drawn(card:CardDataClass)
+
 enum GAME_STATE {WIN, LOSE, PLAYING}
 var game_state : GAME_STATE = GAME_STATE.PLAYING
 var enemy_list : Array[Enemy]
 @export var end_turn_button : Button
 @export var enemies : Node2D
+@export var player_ui : PlayerUI
+
 
 func _ready() -> void:
-	Globals.gameManager = self
 	start_game()
 
 func start_game() -> void:
@@ -22,18 +24,21 @@ func start_game() -> void:
 		# wait a little between activating guys
 		await get_tree().create_timer(0.5).timeout
 	
+	game_loop()
+
+func game_loop():
 	# this is the main game loop
 	while game_state == GAME_STATE.PLAYING:
 		await player_turn()
 		for enemy : Enemy in enemy_list:
 			await enemy_turn(enemy)
-			
+
 func player_turn():
 	for i in range(3 - Globals.hand.size()):
-		draw()
-	# play individual cards
+		await player_ui.draw()
+	# player_ui plays individual cards
 	# player has finished turn
-	await end_turn_button.pressed
+	await player_ui.turn_completed
 
 func enemy_turn(enemy : Enemy):
 	await enemy.attackTrigger()
@@ -43,28 +48,6 @@ func check_player_death():
 	if Globals.hp <= 0:
 		game_state = GAME_STATE.LOSE
 		print("Game over!")
-
-func draw():
-	if !Globals.deck.is_empty():
-		var card = Globals.deck.pop_front()
-		Globals.hand.append(card)
-		card_drawn.emit(card)
-		return card
-
-func discard(card:CardDataClass):
-	Globals.discard.append(card)
-	Globals.hand.erase(card)
-	card.discardEffect()
-
-func addCardToDeck(card):
-	Globals.deck.append(card)
-	
-func removeCardFromDeck(card):
-	Globals.deck.erase(card)
-	card.die()
-
-func destroyCard(card):
-	card.die()
 
 func check_room_cleared():
 	if enemy_list.size() == 0:

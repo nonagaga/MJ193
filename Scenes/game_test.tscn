@@ -3,88 +3,13 @@
 [ext_resource type="Script" uid="uid://dniyjxmmo5q0i" path="res://GameManager.gd" id="1_h07e4"]
 [ext_resource type="Texture2D" uid="uid://dbqii5kw37wq" path="res://Environment/background.png" id="2_h07e4"]
 [ext_resource type="PackedScene" uid="uid://byearha2okcgk" path="res://UI/Enemy Element/CardShark.tscn" id="2_tuxhd"]
-[ext_resource type="Script" path="res://Classes/TagClass.gd" id="5_j1hhr"]
-[ext_resource type="PackedScene" uid="uid://cgq0lkaaw5wyd" path="res://UI/Game UI.tscn" id="5_npqdh"]
-[ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="6_s2l1l"]
-[ext_resource type="Resource" uid="uid://wp5gqivf5k0m" path="res://Actions/Draw2.tres" id="7_xkvug"]
-[ext_resource type="Script" uid="uid://dxldjvw0wd5a6" path="res://Actions/Action Classes/DiscardActionClass.gd" id="8_y2opl"]
-[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="9_q4l48"]
+[ext_resource type="PackedScene" uid="uid://cgq0lkaaw5wyd" path="res://UI/PlayerUI.tscn" id="5_npqdh"]
 
-[sub_resource type="Resource" id="Resource_f6mke"]
-resource_local_to_scene = true
-script = ExtResource("8_y2opl")
-discNum = 2
-maxTargets = 0
-doesTarget = false
-text = "Discard %s cards. "
-metadata/_custom_type_script = "uid://dxldjvw0wd5a6"
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4pbq2"]
-
-[sub_resource type="Resource" id="Resource_5pvws"]
-resource_local_to_scene = true
-script = ExtResource("9_q4l48")
-title = "Faithless Looting"
-texture = SubResource("PlaceholderTexture2D_4pbq2")
-price = 0
-maxTargets = 0
-targetAll = false
-targetRandom = false
-discardCost = 0
-drawActions = Array[ExtResource("6_s2l1l")]([])
-playActions = Array[ExtResource("6_s2l1l")]([ExtResource("7_xkvug"), SubResource("Resource_f6mke")])
-discardActions = Array[ExtResource("6_s2l1l")]([])
-appliedTags = Array[ExtResource("5_j1hhr")]([])
-drawTags = Array[ExtResource("5_j1hhr")]([])
-playTags = Array[ExtResource("5_j1hhr")]([])
-discardTags = Array[ExtResource("5_j1hhr")]([])
-text = ""
-metadata/_custom_type_script = "uid://88hsnkwkom7x"
-
-[sub_resource type="Resource" id="Resource_m400w"]
-resource_local_to_scene = true
-script = ExtResource("9_q4l48")
-title = "Faithless Looting"
-texture = SubResource("PlaceholderTexture2D_4pbq2")
-price = 0
-maxTargets = 0
-targetAll = false
-targetRandom = false
-discardCost = 0
-drawActions = Array[ExtResource("6_s2l1l")]([])
-playActions = Array[ExtResource("6_s2l1l")]([ExtResource("7_xkvug"), SubResource("Resource_f6mke")])
-discardActions = Array[ExtResource("6_s2l1l")]([])
-appliedTags = Array[ExtResource("5_j1hhr")]([])
-drawTags = Array[ExtResource("5_j1hhr")]([])
-playTags = Array[ExtResource("5_j1hhr")]([])
-discardTags = Array[ExtResource("5_j1hhr")]([])
-text = ""
-metadata/_custom_type_script = "uid://88hsnkwkom7x"
-
-[sub_resource type="Resource" id="Resource_f8n82"]
-resource_local_to_scene = true
-script = ExtResource("9_q4l48")
-title = "Faithless Looting"
-texture = SubResource("PlaceholderTexture2D_4pbq2")
-price = 0
-maxTargets = 0
-targetAll = false
-targetRandom = false
-discardCost = 0
-drawActions = Array[ExtResource("6_s2l1l")]([])
-playActions = Array[ExtResource("6_s2l1l")]([ExtResource("7_xkvug"), SubResource("Resource_f6mke")])
-discardActions = Array[ExtResource("6_s2l1l")]([])
-appliedTags = Array[ExtResource("5_j1hhr")]([])
-drawTags = Array[ExtResource("5_j1hhr")]([])
-playTags = Array[ExtResource("5_j1hhr")]([])
-discardTags = Array[ExtResource("5_j1hhr")]([])
-text = ""
-metadata/_custom_type_script = "uid://88hsnkwkom7x"
-
-[node name="Game" type="Node2D" node_paths=PackedStringArray("end_turn_button", "enemies")]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("end_turn_button", "enemies", "card_manager")]
 script = ExtResource("1_h07e4")
-end_turn_button = NodePath("UI/GameUi/Player Choices/End Turn")
+end_turn_button = NodePath("UI/CardManager/Player Choices/End Turn")
 enemies = NodePath("Enemies")
+card_manager = NodePath("UI/CardManager")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -110,15 +35,6 @@ scale = Vector2(0.3, 0.3)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="GameUi" parent="UI" instance=ExtResource("5_npqdh")]
+[node name="CardManager" parent="UI" instance=ExtResource("5_npqdh")]
 
-[node name="Card" parent="UI/GameUi/Hand" index="0"]
-card_res = SubResource("Resource_5pvws")
-
-[node name="Card2" parent="UI/GameUi/Hand" index="1"]
-card_res = SubResource("Resource_m400w")
-
-[node name="Card3" parent="UI/GameUi/Hand" index="2"]
-card_res = SubResource("Resource_f8n82")
-
-[editable path="UI/GameUi"]
+[editable path="UI/CardManager"]

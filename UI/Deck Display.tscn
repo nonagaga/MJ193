@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cthnoyb4c4aum"]
+[gd_scene load_steps=0 format=3 uid="uid://cthnoyb4c4aum"]
 
 [node name="DeckDisplay" type="Control"]
 layout_mode = 3

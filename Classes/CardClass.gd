@@ -102,7 +102,6 @@ func playCard():
 	playEffect()
 	Globals.discard.append(self)
 	Globals.hand.erase(self)
-		
 	Globals.gameManager.check_room_cleared()
 
 func canPlayCard() -> Error:
@@ -126,7 +125,7 @@ func selectCard():
 		doesCardTarget()
 
 func doesCardTarget():
-	if !targetAll && maxTargets >0:
+	if !targetAll && maxTargets > 0:
 		#tell the UI to select targets for this card
 		select_targets.emit(maxTargets,self)
 	else:

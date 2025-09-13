@@ -8,10 +8,10 @@ extends HBoxContainer
 
 func _ready() -> void:
 	_auto_resize()
-	child_entered_tree.connect(func(child):
+	child_entered_tree.connect(func(_child):
 		_auto_resize()
 		)
-	child_exiting_tree.connect(func(child):
+	child_exiting_tree.connect(func(_child):
 		await get_tree().process_frame
 		_auto_resize()
 		)

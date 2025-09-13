@@ -1,13 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgq0lkaaw5wyd"]
+[gd_scene load_steps=7 format=3 uid="uid://cgq0lkaaw5wyd"]
 
-[ext_resource type="Script" uid="uid://b1xyjwfwav5t" path="res://UI/game_ui.gd" id="1_ewuok"]
-[ext_resource type="Script" uid="uid://bxr5owbtp7eii" path="res://UI/hand.gd" id="2_m3g7l"]
-[ext_resource type="PackedScene" uid="uid://dpp7r7l0fdpvc" path="res://card.tscn" id="2_rlhut"]
-[ext_resource type="Resource" uid="uid://dxtxxly6vbto3" path="res://Cards/FaithlessLooting.tres" id="5_ppobp"]
+[ext_resource type="Script" uid="uid://b1xyjwfwav5t" path="res://UI/CardManager.gd" id="1_rjpm0"]
+[ext_resource type="Script" uid="uid://bxr5owbtp7eii" path="res://UI/hand.gd" id="2_yaiyv"]
+[ext_resource type="Script" uid="uid://8tedna75nwoo" path="res://UI/heath_bar.gd" id="3_6t71k"]
 
-[node name="GameUi" type="CanvasLayer" node_paths=PackedStringArray("hand")]
-script = ExtResource("1_ewuok")
-hand = NodePath("Hand")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kiyoi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n1bqq"]
+bg_color = Color(0, 0.7282, 0.0484852, 1)
+
+[sub_resource type="Theme" id="Theme_10hlm"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_kiyoi")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_n1bqq")
+
+[node name="PlayerUI" type="CanvasLayer"]
+script = ExtResource("1_rjpm0")
 
 [node name="Player Choices" type="VBoxContainer" parent="."]
 anchors_preset = 1
@@ -44,20 +51,8 @@ pivot_offset = Vector2(-240, 0)
 size_flags_horizontal = 3
 size_flags_vertical = 10
 theme_override_constants/separation = 500
-script = ExtResource("2_m3g7l")
+script = ExtResource("2_yaiyv")
 anim_speed = null
-
-[node name="Card" parent="Hand" instance=ExtResource("2_rlhut")]
-layout_mode = 2
-card_res = ExtResource("5_ppobp")
-
-[node name="Card2" parent="Hand" instance=ExtResource("2_rlhut")]
-layout_mode = 2
-card_res = ExtResource("5_ppobp")
-
-[node name="Card3" parent="Hand" instance=ExtResource("2_rlhut")]
-layout_mode = 2
-card_res = ExtResource("5_ppobp")
 
 [node name="Void" type="Control" parent="."]
 visible = false
@@ -65,6 +60,15 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="HeathBar" type="ProgressBar" parent="."]
+offset_right = 673.0
+offset_bottom = 75.0
+theme = SubResource("Theme_10hlm")
+step = 1.0
+value = 100.0
+show_percentage = false
+script = ExtResource("3_6t71k")
 
 [connection signal="pressed" from="Player Choices/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Player Choices/Cancel" to="." method="_on_cancel_pressed"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cntxp42gf04lj"
+path="res://.godot/imported/card_draw_debug.wav-d31dbbb48a94d73a8eee4a0913154f57.sample"
+
+[deps]
+
+source_file="res://Sound Effects/card_draw_debug.wav"
+dest_files=["res://.godot/imported/card_draw_debug.wav-d31dbbb48a94d73a8eee4a0913154f57.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
