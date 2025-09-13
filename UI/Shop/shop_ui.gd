@@ -18,9 +18,20 @@ func _ready():
 	while !Globals.discard.is_empty():
 		Globals.deck.append(Globals.discard.pop_front())
 	fill_shop()
+	update_increase_deck_size_button()
 
 func buy_selected():
 	_on_card_buy(current_sel)
+
+func update_increase_deck_size_button():
+	$"VBoxContainer/Increase Deck Size".disabled = Globals.money<Globals.deck_increase_price
+	$"VBoxContainer/Increase Deck Size".text = "Increase Deck Size (%s moners)"%[Globals.deck_increase_price]
+
+func increase_deck_size():
+	Globals.money -= Globals.deck_increase_price
+	Globals.maxDeckSize += Globals.DECKINCREASEAMT
+	Globals.deck_increase_price *= 1.2
+	update_increase_deck_size_button()
 
 func card_selected(ui:CardUI):
 	#print(ui)
@@ -39,6 +50,7 @@ func _on_card_buy(ui:CardUI):
 	ui.queue_free()
 	card_bought()
 	add_new_card()
+	update_increase_deck_size_button()
 
 func fill_shop():
 	while $HBoxContainer.get_child_count()<BUYABLECOUNT:
