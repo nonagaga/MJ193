@@ -1,103 +1,98 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpp7r7l0fdpvc"]
+[gd_scene load_steps=5 format=3 uid="uid://dpp7r7l0fdpvc"]
 
 [ext_resource type="Script" uid="uid://bqbys4x3ry728" path="res://CardUI.gd" id="1_kikvd"]
 [ext_resource type="Resource" uid="uid://ivvnwut4t1q3" path="res://Cards/Rejuvenate.tres" id="2_q5obu"]
 [ext_resource type="Texture2D" uid="uid://cof6qdkvij7cr" path="res://mockupcard.png" id="3_q5obu"]
 
-[sub_resource type="Theme" id="Theme_rjlel"]
-
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_q5obu"]
 
 [node name="Card" type="Control"]
+custom_minimum_size = Vector2(482.001, 671)
 layout_mode = 3
-anchors_preset = 0
+anchor_right = 0.251042
+anchor_bottom = 0.621296
+offset_right = -3.05176e-05
 focus_mode = 1
 script = ExtResource("1_kikvd")
 card_res = ExtResource("2_q5obu")
+metadata/_edit_use_anchors_ = true
 
-[node name="CardOffset" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -240.0
-offset_top = -672.0
-offset_right = 240.0
-pivot_offset = Vector2(240, 672)
-mouse_filter = 1
-theme = SubResource("Theme_rjlel")
-
-[node name="Highlight" type="ColorRect" parent="CardOffset"]
+[node name="Highlight" type="ColorRect" parent="."]
 visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -15.0
-offset_top = -15.0
-offset_right = 17.0
-offset_bottom = 15.0
+offset_left = -13.0
+offset_top = -14.0
+offset_right = 19.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 color = Color(1, 1, 1, 0.752941)
 
-[node name="TextureRect" type="TextureRect" parent="CardOffset"]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 480.0
-offset_bottom = 672.0
+anchor_right = 0.995851
+anchor_bottom = 1.00149
 texture = ExtResource("3_q5obu")
+metadata/_edit_use_anchors_ = true
 
-[node name="CardTexture" type="TextureRect" parent="CardOffset"]
+[node name="CardTexture" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 42.0
-offset_top = 42.0
-offset_right = -47.0
-offset_bottom = -300.0
+anchors_preset = -1
+anchor_left = 0.093361
+anchor_top = 0.150522
+anchor_right = 0.896266
+anchor_bottom = 0.554396
+offset_bottom = -3.05176e-05
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("PlaceholderTexture2D_q5obu")
 expand_mode = 1
 stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
-[node name="Text" type="RichTextLabel" parent="CardOffset"]
+[node name="Text" type="RichTextLabel" parent="."]
 layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 54.0
-offset_top = -281.0
-offset_right = -55.0
-offset_bottom = -69.0
+anchors_preset = -1
+anchor_left = 0.0954357
+anchor_top = 0.593145
+anchor_right = 0.896266
+anchor_bottom = 0.909091
+offset_top = 3.05176e-05
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "This is the card text"
+metadata/_edit_use_anchors_ = true
 
-[node name="Title" type="RichTextLabel" parent="CardOffset"]
+[node name="Title" type="RichTextLabel" parent="."]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = 47.0
-offset_top = 38.0
-offset_right = 47.0
-offset_bottom = 97.0
+anchors_preset = -1
+anchor_left = 0.0975104
+anchor_top = 0.0566319
+anchor_right = 0.900415
+anchor_bottom = 0.14456
 grow_horizontal = 2
 mouse_filter = 1
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
 text = "Card Title"
+metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 visible = false
 layout_mode = 0
-offset_left = -202.0
-offset_right = 202.0
-offset_bottom = 40.0
+anchor_left = 0.0975102
+anchor_top = 1.00298
+anchor_right = 0.935683
+anchor_bottom = 1.06259
+offset_bottom = 6.10352e-05
+metadata/_edit_use_anchors_ = true
 
 [node name="Price" type="Label" parent="PanelContainer"]
 layout_mode = 2
