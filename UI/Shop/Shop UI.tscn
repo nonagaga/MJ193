@@ -32,11 +32,12 @@ grow_vertical = 2
 
 [node name="Gabe" type="TextureRect" parent="."]
 layout_mode = 0
-offset_top = 592.0
-offset_right = 522.0
-offset_bottom = 1080.0
+anchor_top = 0.548148
+anchor_right = 0.271875
+anchor_bottom = 1.0
 texture = ExtResource("2_knsrc")
 expand_mode = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
@@ -87,3 +88,4 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [connection signal="pressed" from="VBoxContainer/Buy" to="." method="buy_selected"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

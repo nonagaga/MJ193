@@ -63,3 +63,7 @@ func card_bought():
 
 func not_enough_money():
 	$PanelContainer/RichTextLabel.text = "Uh you need more cash for that."
+
+
+func _on_quit_pressed() -> void:
+	Globals.scene_manager.transition_to("game")
