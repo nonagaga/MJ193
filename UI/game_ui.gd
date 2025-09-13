@@ -3,12 +3,16 @@ extends CanvasLayer
 var cur_card_selected:CardDataClass = null
 var card_packed = preload("res://card.tscn")
 @export var hand : HBoxContainer
+@onready var play: Button = $"Player Choices/Play"
+@onready var cancel: Button = $"Player Choices/Cancel"
+@onready var end_turn: Button = $"Player Choices/End Turn"
 
 func _ready()->void:
+	play.disabled = true
+	cancel.disabled = true
+	
 	if Globals.gameManager:
 		Globals.gameManager.card_drawn.connect(on_card_drawn)
-		
-	on_card_drawn(load("res://Cards/StabCard.tres"))
 
 func on_card_drawn(card:CardDataClass):
 	if card == null:

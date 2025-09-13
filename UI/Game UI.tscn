@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgq0lkaaw5wyd"]
+[gd_scene load_steps=5 format=3 uid="uid://cgq0lkaaw5wyd"]
 
 [ext_resource type="Script" uid="uid://b1xyjwfwav5t" path="res://UI/game_ui.gd" id="1_ewuok"]
 [ext_resource type="Script" uid="uid://bxr5owbtp7eii" path="res://UI/hand.gd" id="2_m3g7l"]
 [ext_resource type="PackedScene" uid="uid://dpp7r7l0fdpvc" path="res://card.tscn" id="2_rlhut"]
+[ext_resource type="Resource" uid="uid://dxtxxly6vbto3" path="res://Cards/FaithlessLooting.tres" id="5_ppobp"]
 
 [node name="GameUi" type="CanvasLayer" node_paths=PackedStringArray("hand")]
 script = ExtResource("1_ewuok")
@@ -18,14 +19,17 @@ grow_horizontal = 0
 
 [node name="Play" type="Button" parent="Player Choices"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Play"
 
 [node name="Cancel" type="Button" parent="Player Choices"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Cancel"
 
 [node name="End Turn" type="Button" parent="Player Choices"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "End Turn"
 
 [node name="Hand" type="HBoxContainer" parent="."]
@@ -45,12 +49,15 @@ anim_speed = null
 
 [node name="Card" parent="Hand" instance=ExtResource("2_rlhut")]
 layout_mode = 2
+card_res = ExtResource("5_ppobp")
 
 [node name="Card2" parent="Hand" instance=ExtResource("2_rlhut")]
 layout_mode = 2
+card_res = ExtResource("5_ppobp")
 
 [node name="Card3" parent="Hand" instance=ExtResource("2_rlhut")]
 layout_mode = 2
+card_res = ExtResource("5_ppobp")
 
 [node name="Void" type="Control" parent="."]
 visible = false
