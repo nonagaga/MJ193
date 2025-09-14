@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://btr5h7yvj1y12"
+path="res://.godot/imported/CardShark.mp3-f2ca3956bd4fc2d5d20db110ab04206c.mp3str"
+
+[deps]
+
+source_file="res://Music Manager/CardShark.mp3"
+dest_files=["res://.godot/imported/CardShark.mp3-f2ca3956bd4fc2d5d20db110ab04206c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
