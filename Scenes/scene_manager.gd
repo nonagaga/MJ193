@@ -1,4 +1,4 @@
-class_name SceneManager extends Node2D
+class_name SceneManager extends Node
 
 signal scene_changed(scene_name : String)
 signal transition_finished()

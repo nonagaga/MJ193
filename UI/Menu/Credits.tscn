@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk6mlt0e0i3lk"]
+
+[ext_resource type="Script" uid="uid://c7md8lkvb0c3w" path="res://UI/Menu/credits.gd" id="1_gg4ni"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gg4ni"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gg4ni")
+script = ExtResource("1_gg4ni")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 80
+text = "King Corvidae - Programmer
+GabeTheDinosaur - Fish
+General Goods and Services - Programmer
+Drww - Music
+Aviyarn - Art"
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 120
+text = "Close"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

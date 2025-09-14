@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bsk54fjtlwb7n" path="res://Enemies/EnemyRes.gd" id="3_es14b"]
 [ext_resource type="Resource" uid="uid://cnijsmapu5kao" path="res://UI/Enemy Element/Shark.tres" id="4_es14b"]
 [ext_resource type="PackedScene" uid="uid://cgq0lkaaw5wyd" path="res://UI/Game UI.tscn" id="5_npqdh"]
-[ext_resource type="Script" uid="uid://c7r72ysmcheuv" path="res://Scenes/room_randomizer.gd" id="5_q4l48"]
+[ext_resource type="Script" path="res://Scenes/room_randomizer.gd" id="5_q4l48"]
 [ext_resource type="Texture2D" uid="uid://divq0iphn4ke1" path="res://Environment/Room_Backgrounds (7).png" id="6_5pvws"]
 [ext_resource type="Texture2D" uid="uid://1maq4kt68ttn" path="res://Environment/Room_Backgrounds (6).png" id="7_m400w"]
 [ext_resource type="Texture2D" uid="uid://dvjfnbxhxpmr4" path="res://Environment/Room_Backgrounds (2).png" id="8_f8n82"]
@@ -26,7 +26,7 @@ points = 5
 enemy_reses = Array[ExtResource("3_es14b")]([ExtResource("4_es14b"), ExtResource("4_es14b")])
 metadata/_custom_type_script = "uid://bo8d7e5dp86qf"
 
-[node name="Game" type="Node2D" node_paths=PackedStringArray("end_turn_button", "enemies")]
+[node name="Game" type="Node" node_paths=PackedStringArray("end_turn_button", "enemies")]
 script = ExtResource("1_h07e4")
 end_turn_button = NodePath("UI/GameUi/Player Choices/End Turn")
 enemies = NodePath("Enemies")
