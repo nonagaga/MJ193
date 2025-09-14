@@ -5,8 +5,8 @@ signal can_play_card(y:bool)
 enum GAME_STATE {WIN, LOSE, PLAYING}
 var game_state : GAME_STATE = GAME_STATE.PLAYING
 var maxTargets:int = 0
-var enemy_list : Array[EnemyTwo]
-var target_list : Array[EnemyTwo]
+var enemy_list : Array[Enemy]
+var target_list : Array[Enemy]
 @export var enemy_packed:PackedScene = preload("res://UI/Enemy Element/Enemy.tscn")
 @export var end_turn_button : Button
 @export var enemies : Control
