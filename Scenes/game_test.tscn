@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dniyjxmmo5q0i" path="res://GameManager.gd" id="1_h07e4"]
 [ext_resource type="Texture2D" uid="uid://dbqii5kw37wq" path="res://Environment/background.png" id="2_h07e4"]
-[ext_resource type="Script" uid="uid://bo8d7e5dp86qf" path="res://Enemies/enemygroup.gd" id="2_npqdh"]
-[ext_resource type="Script" uid="uid://bsk54fjtlwb7n" path="res://Enemies/EnemyRes.gd" id="3_es14b"]
+[ext_resource type="Script" path="res://Enemies/enemygroup.gd" id="2_npqdh"]
+[ext_resource type="Script" path="res://Enemies/EnemyRes.gd" id="3_es14b"]
 [ext_resource type="Resource" uid="uid://cnijsmapu5kao" path="res://UI/Enemy Element/Shark.tres" id="4_es14b"]
 [ext_resource type="PackedScene" uid="uid://cgq0lkaaw5wyd" path="res://UI/Game UI.tscn" id="5_npqdh"]
 

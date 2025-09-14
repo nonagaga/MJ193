@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CardDataClass" load_steps=6 format=3 uid="uid://dya6axv6ovy6i"]
 
-[ext_resource type="Script" path="res://Classes/TagClass.gd" id="1_ypec3"]
+[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_ypec3"]
 [ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_s72aa"]
 [ext_resource type="Script" uid="uid://conym5rpk6q1q" path="res://Actions/Action Classes/FreezeActionClass.gd" id="3_s72aa"]
 [ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_xh0n7"]
