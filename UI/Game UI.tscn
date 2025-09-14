@@ -1,84 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cgq0lkaaw5wyd"]
+[gd_scene load_steps=3 format=3 uid="uid://cgq0lkaaw5wyd"]
 
 [ext_resource type="Script" uid="uid://b1xyjwfwav5t" path="res://UI/game_ui.gd" id="1_ewuok"]
 [ext_resource type="Script" uid="uid://bxr5owbtp7eii" path="res://UI/hand.gd" id="2_m3g7l"]
-[ext_resource type="PackedScene" uid="uid://dpp7r7l0fdpvc" path="res://card.tscn" id="2_rlhut"]
-[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="4_q661u"]
-[ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="5_6wndt"]
-[ext_resource type="Resource" uid="uid://wp5gqivf5k0m" path="res://Actions/Draw2.tres" id="6_xvuud"]
-[ext_resource type="Script" uid="uid://dxldjvw0wd5a6" path="res://Actions/Action Classes/DiscardActionClass.gd" id="7_kfa8p"]
-[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="8_v45ew"]
-
-[sub_resource type="Resource" id="Resource_f6mke"]
-resource_local_to_scene = true
-script = ExtResource("7_kfa8p")
-discNum = 2
-maxTargets = 0
-doesTarget = false
-text = "Discard %s cards. "
-metadata/_custom_type_script = "uid://dxldjvw0wd5a6"
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4pbq2"]
-
-[sub_resource type="Resource" id="Resource_yvgdu"]
-resource_local_to_scene = true
-script = ExtResource("8_v45ew")
-title = "Faithless Looting"
-texture = SubResource("PlaceholderTexture2D_4pbq2")
-price = 5
-maxTargets = 0
-targetAll = false
-targetRandom = false
-discardCost = 0
-drawActions = Array[ExtResource("5_6wndt")]([])
-playActions = Array[ExtResource("5_6wndt")]([ExtResource("6_xvuud"), SubResource("Resource_f6mke")])
-discardActions = Array[ExtResource("5_6wndt")]([])
-appliedTags = Array[ExtResource("4_q661u")]([])
-drawTags = Array[ExtResource("4_q661u")]([])
-playTags = Array[ExtResource("4_q661u")]([])
-discardTags = Array[ExtResource("4_q661u")]([])
-text = ""
-metadata/_custom_type_script = "uid://88hsnkwkom7x"
-
-[sub_resource type="Resource" id="Resource_5ijrk"]
-resource_local_to_scene = true
-script = ExtResource("8_v45ew")
-title = "Faithless Looting"
-texture = SubResource("PlaceholderTexture2D_4pbq2")
-price = 5
-maxTargets = 0
-targetAll = false
-targetRandom = false
-discardCost = 0
-drawActions = Array[ExtResource("5_6wndt")]([])
-playActions = Array[ExtResource("5_6wndt")]([ExtResource("6_xvuud"), SubResource("Resource_f6mke")])
-discardActions = Array[ExtResource("5_6wndt")]([])
-appliedTags = Array[ExtResource("4_q661u")]([])
-drawTags = Array[ExtResource("4_q661u")]([])
-playTags = Array[ExtResource("4_q661u")]([])
-discardTags = Array[ExtResource("4_q661u")]([])
-text = ""
-metadata/_custom_type_script = "uid://88hsnkwkom7x"
-
-[sub_resource type="Resource" id="Resource_g5gm8"]
-resource_local_to_scene = true
-script = ExtResource("8_v45ew")
-title = "Faithless Looting"
-texture = SubResource("PlaceholderTexture2D_4pbq2")
-price = 5
-maxTargets = 0
-targetAll = false
-targetRandom = false
-discardCost = 0
-drawActions = Array[ExtResource("5_6wndt")]([])
-playActions = Array[ExtResource("5_6wndt")]([ExtResource("6_xvuud"), SubResource("Resource_f6mke")])
-discardActions = Array[ExtResource("5_6wndt")]([])
-appliedTags = Array[ExtResource("4_q661u")]([])
-drawTags = Array[ExtResource("4_q661u")]([])
-playTags = Array[ExtResource("4_q661u")]([])
-discardTags = Array[ExtResource("4_q661u")]([])
-text = ""
-metadata/_custom_type_script = "uid://88hsnkwkom7x"
 
 [node name="GameUi" type="CanvasLayer" node_paths=PackedStringArray("hand")]
 script = ExtResource("1_ewuok")
@@ -121,18 +44,6 @@ size_flags_vertical = 10
 theme_override_constants/separation = 500
 script = ExtResource("2_m3g7l")
 anim_speed = null
-
-[node name="Card" parent="Hand" instance=ExtResource("2_rlhut")]
-layout_mode = 2
-card_res = SubResource("Resource_yvgdu")
-
-[node name="Card2" parent="Hand" instance=ExtResource("2_rlhut")]
-layout_mode = 2
-card_res = SubResource("Resource_5ijrk")
-
-[node name="Card3" parent="Hand" instance=ExtResource("2_rlhut")]
-layout_mode = 2
-card_res = SubResource("Resource_g5gm8")
 
 [node name="Void" type="Control" parent="."]
 visible = false

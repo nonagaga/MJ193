@@ -32,6 +32,10 @@ folder_colors={
 "res://Music Manager/": "green"
 }
 
+[global_group]
+
+Enemy=""
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
