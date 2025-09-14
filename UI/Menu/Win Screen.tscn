@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdksy72nletrt"]
+
+[ext_resource type="Theme" uid="uid://5uii13lyhonh" path="res://Theme/Menu.tres" id="1_qv7c5"]
+[ext_resource type="Script" uid="uid://caiod5145njgt" path="res://UI/Menu/win_screen.gd" id="1_vfeml"]
+
+[node name="Win Screen" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qv7c5")
+script = ExtResource("1_vfeml")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Double" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 150
+text = "Double"
+
+[node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="Nothing" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 150
+text = "Nothing"
+
+[connection signal="pressed" from="HBoxContainer/Double" to="." method="_on_double_pressed"]
+[connection signal="pressed" from="HBoxContainer/Nothing" to="." method="_on_nothing_pressed"]

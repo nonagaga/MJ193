@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="EnemyRes" load_steps=2 format=3 uid="uid://byqsqpxjy6mv7"]
+[gd_resource type="Resource" script_class="EnemyRes" load_steps=3 format=3 uid="uid://byqsqpxjy6mv7"]
 
 [ext_resource type="Script" uid="uid://bsk54fjtlwb7n" path="res://Enemies/EnemyRes.gd" id="1_u4qot"]
+[ext_resource type="AudioStream" uid="uid://815lggvea547" path="res://Music Manager/Handman.mp3" id="2_2yql1"]
 
 [resource]
 script = ExtResource("1_u4qot")
-maxHP = 0
-speed = 0
-dmg = 0
+maxHP = 17
+speed = 5
+dmg = 6
 points = 0
-theme_song_name = ""
+theme_song = ExtResource("2_2yql1")
+theme_song_name = "handman"
 maxTurnTillAttack = 0
 metadata/_custom_type_script = "uid://bsk54fjtlwb7n"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyRes" load_steps=3 format=3 uid="uid://c6kg5ya5f5t70"]
+
+[ext_resource type="Script" uid="uid://bsk54fjtlwb7n" path="res://Enemies/EnemyRes.gd" id="1_nbk5h"]
+[ext_resource type="AudioStream" uid="uid://cn6lmn0au3rif" path="res://Music Manager/SpikeMagic.mp3" id="2_frvoj"]
+
+[resource]
+script = ExtResource("1_nbk5h")
+maxHP = 200000
+speed = 1
+dmg = 20
+points = 10
+theme_song = ExtResource("2_frvoj")
+theme_song_name = "spike"
+maxTurnTillAttack = 0
+metadata/_custom_type_script = "uid://bsk54fjtlwb7n"
