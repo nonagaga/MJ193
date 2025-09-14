@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyRes" load_steps=3 format=3 uid="uid://dwfm53nopbgaa"]
+
+[ext_resource type="Script" uid="uid://bsk54fjtlwb7n" path="res://Enemies/EnemyRes.gd" id="1_8hdck"]
+[ext_resource type="AudioStream" uid="uid://btr5h7yvj1y12" path="res://Music Manager/CardShark.mp3" id="2_qpv8t"]
+
+[resource]
+script = ExtResource("1_8hdck")
+maxHP = 20
+speed = 5
+dmg = 5
+points = 10
+theme_song = ExtResource("2_qpv8t")
+theme_song_name = "shark"
+maxTurnTillAttack = 0
+metadata/_custom_type_script = "uid://bsk54fjtlwb7n"
