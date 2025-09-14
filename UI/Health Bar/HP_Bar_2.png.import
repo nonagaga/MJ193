@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs4cbal8fpet5"
-path="res://.godot/imported/cardshark1.png-cb52389b820c63c5e2375aeecf5dca42.ctex"
+uid="uid://dakmfcdcaawju"
+path="res://.godot/imported/HP_Bar_2.png-2ead1dd71f8b860c731c527b0e172476.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://cardshark1.png"
-dest_files=["res://.godot/imported/cardshark1.png-cb52389b820c63c5e2375aeecf5dca42.ctex"]
+source_file="res://UI/Health Bar/HP_Bar_2.png"
+dest_files=["res://.godot/imported/HP_Bar_2.png-2ead1dd71f8b860c731c527b0e172476.ctex"]
 
 [params]
 

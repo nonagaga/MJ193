@@ -1,5 +1,5 @@
 extends TextureButton
-class_name EnemyTwo
+class_name Enemy
 @export var enemy_res:EnemyRes
 @export var animation_player : AnimationPlayer
 @export var target_highlight: TextureRect
