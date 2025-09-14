@@ -1,0 +1,85 @@
+[gd_scene load_steps=9 format=3 uid="uid://h5t1ks1udv1v"]
+
+[ext_resource type="Script" uid="uid://cs26jgu7ccx8f" path="res://Enemies/Enemy.gd" id="1_oe87t"]
+[ext_resource type="Resource" uid="uid://cnijsmapu5kao" path="res://UI/Enemy Element/Shark.tres" id="2_ncrdq"]
+[ext_resource type="Texture2D" uid="uid://da4icni82fsy1" path="res://UI/Enemy Element/Target Highlight.png" id="2_pkyom"]
+[ext_resource type="Texture2D" uid="uid://bs4cbal8fpet5" path="res://cardshark1.png" id="3_8cfcj"]
+
+[sub_resource type="Animation" id="Animation_ua8ok"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_agi8h"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ncrdq"]
+resource_name = "damaged"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8cfcj"]
+_data = {
+&"RESET": SubResource("Animation_ua8ok"),
+&"attack": SubResource("Animation_agi8h"),
+&"damaged": SubResource("Animation_ncrdq")
+}
+
+[node name="Enemy" type="TextureButton" node_paths=PackedStringArray("animation_player", "target_highlight") groups=["Enemy"]]
+offset_right = 1080.0
+offset_bottom = 1080.0
+scale = Vector2(1e-05, 1e-05)
+toggle_mode = true
+texture_normal = ExtResource("3_8cfcj")
+script = ExtResource("1_oe87t")
+enemy_res = ExtResource("2_ncrdq")
+animation_player = NodePath("AnimationPlayer")
+target_highlight = NodePath("TextureRect")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8cfcj")
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+offset_right = 1080.0
+offset_bottom = 1080.0
+texture = ExtResource("2_pkyom")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="toggled" from="." to="." method="_toggled"]

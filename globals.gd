@@ -14,6 +14,8 @@ const DECKINCREASEAMT:int = 3
 var hand:Array[CardDataClass]
 var gameManager
 var scene_manager : SceneManager
+var max_points:int = 10
+var cur_points:int = 10
 
 func _ready() -> void:
 	hp = maxHP

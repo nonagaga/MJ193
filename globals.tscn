@@ -1,11 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://513m03a18f7e"]
+[gd_scene load_steps=2 format=3 uid="uid://513m03a18f7e"]
 
 [ext_resource type="Script" uid="uid://vlonwq26j2bn" path="res://globals.gd" id="1_f6yec"]
-[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="2_3o0v4"]
-[ext_resource type="Resource" uid="uid://cqb6uxyjqii5" path="res://Cards/BarbedWire.tres" id="3_oes5j"]
-[ext_resource type="Resource" uid="uid://dfmh1yctrmiwu" path="res://Cards/DoubleTap.tres" id="4_lbu14"]
 
 [node name="Globals" type="Node"]
 script = ExtResource("1_f6yec")
 maxHP = 100
-deck = Array[ExtResource("2_3o0v4")]([ExtResource("3_oes5j"), ExtResource("3_oes5j"), ExtResource("3_oes5j"), ExtResource("4_lbu14")])
