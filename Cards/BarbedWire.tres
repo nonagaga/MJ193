@@ -16,13 +16,12 @@ doesTarget = false
 text = "When this card is [b]drawn[/b] take [b]%s[/b] damage. "
 metadata/_custom_type_script = "uid://dt75l8sg55rex"
 
-[sub_resource type="Resource" id="Resource_ma1lb"]
-resource_local_to_scene = true
+[sub_resource type="Resource" id="Resource_pqwjx"]
 script = ExtResource("4_ucmg0")
 damage = 8
-maxTargets = 1
+maxTargets = 0
 doesTarget = true
-text = "Deal [b]%s[/b] damage to target enemy."
+text = "Deal 8 damage to target enemy."
 metadata/_custom_type_script = "uid://bg5b3xot1fto5"
 
 [resource]
@@ -35,8 +34,8 @@ maxTargets = 1
 targetAll = false
 targetRandom = false
 discardCost = 0
-drawActions = Array[ExtResource("2_4bm8m")]([SubResource("Resource_3wxfh"), SubResource("Resource_ma1lb")])
-playActions = Array[ExtResource("2_4bm8m")]([])
+drawActions = Array[ExtResource("2_4bm8m")]([SubResource("Resource_3wxfh")])
+playActions = Array[ExtResource("2_4bm8m")]([SubResource("Resource_pqwjx")])
 discardActions = Array[ExtResource("2_4bm8m")]([])
 appliedTags = Array[ExtResource("1_2gibj")]([])
 drawTags = Array[ExtResource("1_2gibj")]([])

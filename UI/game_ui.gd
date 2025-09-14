@@ -1,8 +1,10 @@
 extends CanvasLayer
 
 var cur_card_selected:CardDataClass = null
+var cur_card_ui:CardUI
 var card_packed = preload("res://card.tscn")
 @export var hand : HBoxContainer
+var targeting:bool = false
 @onready var play: Button = $"Player Choices/Play"
 @onready var cancel: Button = $"Player Choices/Cancel"
 @onready var end_turn: Button = $"Player Choices/End Turn"
@@ -13,6 +15,8 @@ func _ready()->void:
 	cancel.disabled = true
 	if Globals.gameManager:
 		Globals.gameManager.card_drawn.connect(on_card_drawn)
+	if Globals.gameManager:
+		Globals.gameManager.can_play_card.connect(minimumCardsTargetted)
 	print(Globals.hand)
 
 func on_card_drawn(card:CardDataClass):
@@ -25,30 +29,72 @@ func create_card(card:CardDataClass)->Control:
 	new_card_instance.card_res = card.duplicate()
 	$Void.add_child(new_card_instance)
 	new_card_instance.selected.connect(card_selected.bind(new_card_instance))
+	Globals.hand.append(new_card_instance.card_res)
 	return new_card_instance
 
 func enter_target_mode():
+	Globals.gameManager.target_list.clear()
+	Globals.gameManager.maxTargets = cur_card_selected.maxTargets
+	targeting = true
 	for i in get_tree().get_nodes_in_group("Enemy"):
 		i.disabled = false
 		i.target_highlight.visible = true
 
+func exit_target_mode():
+	Globals.gameManager.target_list.clear()
+	Globals.gameManager.maxTargets = 0
+	targeting = false
+	for i in get_tree().get_nodes_in_group("Enemy"):
+		if i.is_pressed():
+			i._toggled(false)
+		i.disabled = true
+		i.target_highlight.visible = false
+	disable_play()
+		
+
+func enable_play():
+	play.disabled = false
+	cancel.disabled = false
+
+func disable_play():
+	play.disabled = true
+	cancel.disabled = true
+
+func minimumCardsTargetted(y):
+	if y:
+		enable_play()
+	else:
+		disable_play()
+
 func card_selected(item:Control):
-	cur_card_selected = item.card_res
-	if cur_card_selected!=null:
-		if cur_card_selected.doesCardTarget():
-			enter_target_mode()
+	if !targeting:
+		cur_card_ui = item
+		cur_card_selected = item.card_res
+		if cur_card_selected!=null:
+			if cur_card_selected.canPlayCard():
+				if cur_card_selected.doesCardTarget():
+					enter_target_mode()
+			else:
+				enable_play()
 
 func deselect_card(item:Control):
 	pass
 
 func _on_play_pressed() -> void:
-	cur_card_selected.playCard()
+	cur_card_selected.targets = Globals.gameManager.target_list
+	await cur_card_selected.playCard()
+	cur_card_ui.queue_free()
+	exit_target_mode()
 	pass # Replace with function body.
 
 
 func _on_cancel_pressed() -> void:
-	pass # Replace with function body.
+	disable_play()
+	if targeting:
+		exit_target_mode()
 
 
 func _on_end_turn_pressed() -> void:
+	exit_target_mode()
+	disable_play()
 	pass # Replace with function body.

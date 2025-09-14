@@ -1,10 +1,12 @@
 extends Node
 
 signal card_drawn(card:CardDataClass)
+signal can_play_card(y:bool)
 enum GAME_STATE {WIN, LOSE, PLAYING}
 var game_state : GAME_STATE = GAME_STATE.PLAYING
 var enemy_list : Array[Enemy]
 var target_list : Array[Enemy]
+var maxTargets:int = 0
 @export var end_turn_button : Button
 @export var enemies : Node2D
 
@@ -31,6 +33,7 @@ func start_game() -> void:
 			
 func player_turn():
 	for i in range(3 - Globals.hand.size()):
+		print("drawing")
 		draw()
 	# play individual cards
 	# player has finished turn
@@ -48,7 +51,6 @@ func check_player_death():
 func draw():
 	if !Globals.deck.is_empty():
 		var card = Globals.deck.pop_front()
-		Globals.hand.append(card)
 		card_drawn.emit(card)
 		return card
 

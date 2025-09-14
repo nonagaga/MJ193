@@ -48,7 +48,6 @@ func setUpCard():
 	for i in discardActions:
 		i.card = self
 	compileCardText()
-	print(text)
 
 #when drawn execute all draw effects
 func drawEffect():
@@ -62,8 +61,7 @@ func drawEffect():
 
 #when played execute all play effects
 func playEffect():
-	Globals.gameManager.discard(self)
-	if targetRandom == true:
+	if targetRandom:
 		for i in range(maxTargets):
 			targets.append(Globals.gameManager.enemy_list.pick_random())
 	for i:Tag in playTags:
@@ -107,7 +105,7 @@ func playCard():
 		
 	Globals.gameManager.check_room_cleared()
 
-func canPlayCard() -> Error:
+func canPlayCard():
 	#check if the card has play actions to actually play
 	if !playActions.is_empty():
 		#check if the card requires you to discard cards before playing it
@@ -119,13 +117,10 @@ func canPlayCard() -> Error:
 					force_discard.emit(discardCost)
 			else:
 				#add can't play card function here
-				return FAILED
+				return false
 	
-	return OK
+	return true
 
-func selectCard():
-	if canPlayCard():
-		doesCardTarget()
 
 func doesCardTarget():
 	if !targetAll && maxTargets >0:

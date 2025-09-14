@@ -87,8 +87,14 @@ func _on_mouse_exited() -> void:
 
 func _toggled(toggled_on:bool):
 	if toggled_on:
-		target_highlight.modulate = Color(255,0,0,1)
-		Globals.gameManager.target_list.append(self)
+		if Globals.gameManager.maxTargets > Globals.gameManager.target_list.size():
+			target_highlight.modulate = Color(255,0,0,1)
+			Globals.gameManager.target_list.append(self)
+			Globals.gameManager.can_play_card.emit(true)
+		else:
+			self.button_pressed
 	else:
 		target_highlight.modulate = Color(255,255,255,1)
 		Globals.gameManager.target_list.erase(self)
+		if Globals.gameManager.target_list.size() == 0:
+			Globals.gameManager.can_play_card.emit(false)
