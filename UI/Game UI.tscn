@@ -15,6 +15,13 @@ offset_left = -78.0
 offset_bottom = 1080.0
 grow_horizontal = 0
 
+[node name="Discard" type="Button" parent="Player Choices"]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+disabled = true
+text = "Discard"
+
 [node name="Play" type="Button" parent="Player Choices"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
@@ -57,6 +64,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[connection signal="pressed" from="Player Choices/Discard" to="." method="_on_discard_pressed"]
 [connection signal="pressed" from="Player Choices/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Player Choices/Cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="Player Choices/End Turn" to="." method="_on_end_turn_pressed"]
