@@ -4,7 +4,7 @@ class_name DrawAction
 
 func resolve(targets:Array[Enemy]):
 	for i in range(drawNum):
-		card.draw.emit(drawNum)
+		Globals.gameManager.draw()
 
 func updateText():
 	actualText = text % str(drawNum)

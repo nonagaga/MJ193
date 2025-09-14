@@ -30,6 +30,7 @@ func create_card(card:CardDataClass)->Control:
 	$Void.add_child(new_card_instance)
 	new_card_instance.selected.connect(card_selected.bind(new_card_instance))
 	Globals.hand.append(new_card_instance.card_res)
+	new_card_instance.card_res.drawEffect
 	return new_card_instance
 
 func enter_target_mode():
@@ -74,6 +75,8 @@ func card_selected(item:Control):
 			if cur_card_selected.canPlayCard():
 				if cur_card_selected.doesCardTarget():
 					enter_target_mode()
+				else:
+					enable_play()
 			else:
 				enable_play()
 

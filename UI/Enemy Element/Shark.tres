@@ -8,7 +8,7 @@
 script = ExtResource("1_j0okq")
 maxHP = 5
 speed = 1
-dmg = 100
+dmg = 1
 points = 0
 theme_song = ExtResource("3_j0okq")
 theme_song_name = "shark"

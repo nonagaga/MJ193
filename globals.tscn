@@ -9,5 +9,5 @@
 
 [node name="Globals" type="Node"]
 script = ExtResource("1_f6yec")
-maxHP = 100
+maxHP = 10000000
 defaultDeck = Array[ExtResource("2_oes5j")]([ExtResource("3_lbu14"), ExtResource("3_lbu14"), ExtResource("3_lbu14"), ExtResource("3_lbu14"), ExtResource("3_lbu14"), ExtResource("4_52l8x"), ExtResource("4_52l8x"), ExtResource("5_61u0x"), ExtResource("5_61u0x"), ExtResource("6_lbu14"), ExtResource("6_lbu14")])
