@@ -72,7 +72,13 @@ func point_buy_greed():
 
 func adjust_add_child(balls:EnemyTwo):
 	#use this for custom placement logic for dynamic adding to the scene
-	enemies.add_child(balls)
+	for spawn in get_tree().get_nodes_in_group("enemy_spawns"):
+		if spawn.get_child_count() == 0:
+			spawn.add_child(balls)
+			return
+			
+	printerr("No available spawns left!")
+	
 
 func create_enemy(enemy_res:EnemyRes)->EnemyTwo:
 	var new_enemy_instance : EnemyTwo = enemy_packed.instantiate()

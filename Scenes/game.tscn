@@ -1,0 +1,152 @@
+[gd_scene load_steps=9 format=3 uid="uid://dcmhrguaqlhrn"]
+
+[ext_resource type="Texture2D" uid="uid://divq0iphn4ke1" path="res://Environment/Room_Backgrounds (7).png" id="2_h4fw4"]
+[ext_resource type="Script" uid="uid://c7r72ysmcheuv" path="res://Scenes/room_randomizer.gd" id="2_ldgsr"]
+[ext_resource type="Texture2D" uid="uid://1maq4kt68ttn" path="res://Environment/Room_Backgrounds (6).png" id="3_ldgsr"]
+[ext_resource type="Texture2D" uid="uid://dvjfnbxhxpmr4" path="res://Environment/Room_Backgrounds (2).png" id="4_o5yvi"]
+[ext_resource type="Texture2D" uid="uid://cv3bubaduhmab" path="res://Environment/Room_Backgrounds (3).png" id="5_rku1e"]
+[ext_resource type="Texture2D" uid="uid://d5ig6unyec4f" path="res://Environment/Room_Backgrounds (4).png" id="6_rfjv2"]
+[ext_resource type="Texture2D" uid="uid://dcedigqh8bgbu" path="res://Environment/Room_Backgrounds (5).png" id="7_1phco"]
+[ext_resource type="Texture2D" uid="uid://c3iu4q0mt32j6" path="res://Environment/Room_Backgrounds.png" id="8_nb51f"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+script = ExtResource("2_ldgsr")
+
+[node name="FillColor" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Colors" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+texture = ExtResource("2_h4fw4")
+
+[node name="Lines" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+texture = ExtResource("3_ldgsr")
+
+[node name="Posters" type="Control" parent="Background"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="poster1" type="TextureRect" parent="Background/Posters"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+texture = ExtResource("4_o5yvi")
+
+[node name="poster2" type="TextureRect" parent="Background/Posters"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+texture = ExtResource("5_rku1e")
+
+[node name="poster3" type="TextureRect" parent="Background/Posters"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+texture = ExtResource("6_rfjv2")
+
+[node name="poster4" type="TextureRect" parent="Background/Posters"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+texture = ExtResource("7_1phco")
+
+[node name="poster5" type="TextureRect" parent="Background/Posters"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+texture = ExtResource("8_nb51f")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="spawn_back_left" type="Control" parent="Enemies" groups=["enemy_spawns"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 987.0
+offset_top = 344.0
+offset_right = 1027.0
+offset_bottom = 384.0
+scale = Vector2(0.6, 0.6)
+
+[node name="spawn_back_right" type="Control" parent="Enemies" groups=["enemy_spawns"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1418.0
+offset_top = 432.0
+offset_right = 1458.0
+offset_bottom = 472.0
+scale = Vector2(0.6, 0.6)
+
+[node name="spawn_middle" type="Control" parent="Enemies" groups=["enemy_spawns"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1106.0
+offset_top = 456.0
+offset_right = 1146.0
+offset_bottom = 496.0
+scale = Vector2(0.8, 0.8)
+
+[node name="spawn_front_left" type="Control" parent="Enemies" groups=["enemy_spawns"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 525.0
+offset_top = 500.0
+offset_right = 565.0
+offset_bottom = 540.0
+
+[node name="spawn_front_right" type="Control" parent="Enemies" groups=["enemy_spawns"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1511.0
+offset_top = 662.0
+offset_right = 1551.0
+offset_bottom = 702.0
