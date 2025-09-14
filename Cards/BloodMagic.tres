@@ -1,0 +1,44 @@
+[gd_resource type="Resource" script_class="CardDataClass" load_steps=8 format=3 uid="uid://bc2wjsgbxj8rh"]
+
+[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_qkaq1"]
+[ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_4dwrn"]
+[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_53c37"]
+[ext_resource type="Script" uid="uid://dt75l8sg55rex" path="res://Actions/Action Classes/SelfDamageActionClass.gd" id="3_w6sqp"]
+[ext_resource type="Script" uid="uid://26c1ya4mgglh" path="res://Actions/Action Classes/DrawActionClass.gd" id="4_cg2uv"]
+
+[sub_resource type="Resource" id="Resource_w4x42"]
+resource_local_to_scene = true
+script = ExtResource("3_w6sqp")
+amount = 5
+maxTargets = 0
+doesTarget = false
+text = "Take [b]5[/b] damage. "
+metadata/_custom_type_script = "uid://dt75l8sg55rex"
+
+[sub_resource type="Resource" id="Resource_b7vj8"]
+resource_local_to_scene = true
+script = ExtResource("4_cg2uv")
+drawNum = 2
+maxTargets = 0
+doesTarget = false
+text = "Draw [b]2 cards.[/b]"
+metadata/_custom_type_script = "uid://26c1ya4mgglh"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("3_53c37")
+title = "Blood Magic"
+price = 10
+maxTargets = 0
+targetAll = false
+targetRandom = false
+discardCost = 0
+drawActions = Array[ExtResource("2_4dwrn")]([])
+playActions = Array[ExtResource("2_4dwrn")]([SubResource("Resource_w4x42"), SubResource("Resource_b7vj8")])
+discardActions = Array[ExtResource("2_4dwrn")]([])
+appliedTags = Array[ExtResource("1_qkaq1")]([])
+drawTags = Array[ExtResource("1_qkaq1")]([])
+playTags = Array[ExtResource("1_qkaq1")]([])
+discardTags = Array[ExtResource("1_qkaq1")]([])
+text = ""
+metadata/_custom_type_script = "uid://88hsnkwkom7x"

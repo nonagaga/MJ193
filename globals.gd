@@ -10,6 +10,7 @@ var hp:int :
 
 @export var maxDeckSize:int = 21
 @export var deck:Array[CardDataClass]
+@export var defaultDeck:Array[CardDataClass]
 @export var discard:Array[CardDataClass]
 signal money_changed()
 var money:int = 40:
@@ -26,4 +27,6 @@ var cur_points:int = 10
 
 func _ready() -> void:
 	hp = maxHP
+	deck = defaultDeck
+	deck.shuffle()
 	scene_manager = get_tree().get_root().get_node("SceneManager")

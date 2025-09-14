@@ -1,7 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://513m03a18f7e"]
+[gd_scene load_steps=7 format=3 uid="uid://513m03a18f7e"]
 
 [ext_resource type="Script" uid="uid://vlonwq26j2bn" path="res://globals.gd" id="1_f6yec"]
+[ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="2_oes5j"]
+[ext_resource type="Resource" uid="uid://87kgyaemmdqe" path="res://Cards/StabCard.tres" id="3_lbu14"]
+[ext_resource type="Resource" uid="uid://mbl6rpbvv83c" path="res://Cards/Bomb.tres" id="4_52l8x"]
+[ext_resource type="Resource" uid="uid://ivvnwut4t1q3" path="res://Cards/Rejuvenate.tres" id="5_61u0x"]
+[ext_resource type="Resource" uid="uid://bc2wjsgbxj8rh" path="res://Cards/BloodMagic.tres" id="6_lbu14"]
 
 [node name="Globals" type="Node"]
 script = ExtResource("1_f6yec")
 maxHP = 100
+defaultDeck = Array[ExtResource("2_oes5j")]([ExtResource("3_lbu14"), ExtResource("3_lbu14"), ExtResource("3_lbu14"), ExtResource("3_lbu14"), ExtResource("3_lbu14"), ExtResource("4_52l8x"), ExtResource("4_52l8x"), ExtResource("5_61u0x"), ExtResource("5_61u0x"), ExtResource("6_lbu14"), ExtResource("6_lbu14")])

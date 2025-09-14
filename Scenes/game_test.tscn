@@ -31,9 +31,9 @@ metadata/_custom_type_script = "uid://bo8d7e5dp86qf"
 
 [node name="Game" type="Node" node_paths=PackedStringArray("end_turn_button", "enemies")]
 script = ExtResource("1_h07e4")
-enemy_options = Array[ExtResource("2_npqdh")]([SubResource("Resource_gxfk6"), SubResource("Resource_nnqh5")])
 end_turn_button = NodePath("UI/GameUi/Player Choices/End Turn")
 enemies = NodePath("Enemies")
+enemy_options = Array[ExtResource("2_npqdh")]([SubResource("Resource_gxfk6"), SubResource("Resource_nnqh5")])
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
