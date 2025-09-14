@@ -1,14 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://dupy1f8fboept"]
+[gd_scene load_steps=9 format=3 uid="uid://dupy1f8fboept"]
 
 [ext_resource type="Script" uid="uid://dniyjxmmo5q0i" path="res://GameManager.gd" id="1_h07e4"]
 [ext_resource type="Texture2D" uid="uid://dbqii5kw37wq" path="res://Environment/background.png" id="2_h07e4"]
-[ext_resource type="PackedScene" uid="uid://byearha2okcgk" path="res://UI/Enemy Element/CardShark.tscn" id="2_tuxhd"]
+[ext_resource type="Script" uid="uid://bo8d7e5dp86qf" path="res://Enemies/enemygroup.gd" id="2_npqdh"]
+[ext_resource type="Script" uid="uid://bsk54fjtlwb7n" path="res://Enemies/EnemyRes.gd" id="3_es14b"]
+[ext_resource type="Resource" uid="uid://cnijsmapu5kao" path="res://UI/Enemy Element/Shark.tres" id="4_es14b"]
 [ext_resource type="PackedScene" uid="uid://cgq0lkaaw5wyd" path="res://UI/Game UI.tscn" id="5_npqdh"]
+
+[sub_resource type="Resource" id="Resource_gxfk6"]
+script = ExtResource("2_npqdh")
+points = 1
+enemy_reses = Array[ExtResource("3_es14b")]([ExtResource("4_es14b")])
+metadata/_custom_type_script = "uid://bo8d7e5dp86qf"
+
+[sub_resource type="Resource" id="Resource_nnqh5"]
+script = ExtResource("2_npqdh")
+points = 5
+enemy_reses = Array[ExtResource("3_es14b")]([ExtResource("4_es14b"), ExtResource("4_es14b")])
+metadata/_custom_type_script = "uid://bo8d7e5dp86qf"
 
 [node name="Game" type="Node2D" node_paths=PackedStringArray("end_turn_button", "enemies")]
 script = ExtResource("1_h07e4")
 end_turn_button = NodePath("UI/GameUi/Player Choices/End Turn")
 enemies = NodePath("Enemies")
+enemy_options = Array[ExtResource("2_npqdh")]([SubResource("Resource_gxfk6"), SubResource("Resource_nnqh5")])
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -22,21 +37,54 @@ grow_vertical = 2
 focus_mode = 1
 texture = ExtResource("2_h07e4")
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="Enemies" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("2_tuxhd")]
-offset_left = 1429.0
-offset_top = 640.0
-offset_right = 1969.48
-offset_bottom = 1180.0
-scale = Vector2(0.42, 0.42)
-
-[node name="Enemy2" parent="Enemies" instance=ExtResource("2_tuxhd")]
-offset_left = 1132.0
-offset_top = 480.0
-offset_right = 1672.48
-offset_bottom = 1020.0
+[node name="spawn_back_left" type="Control" parent="Enemies" groups=["enemy_spawns"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 987.0
+offset_top = 344.0
+offset_right = 1027.0
+offset_bottom = 384.0
 scale = Vector2(0.3, 0.3)
+
+[node name="spawn_back_right" type="Control" parent="Enemies" groups=["enemy_spawns"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1418.0
+offset_top = 432.0
+offset_right = 1458.0
+offset_bottom = 472.0
+scale = Vector2(0.3, 0.3)
+
+[node name="spawn_middle" type="Control" parent="Enemies" groups=["enemy_spawns"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1106.0
+offset_top = 456.0
+offset_right = 1146.0
+offset_bottom = 496.0
+scale = Vector2(0.4, 0.4)
+
+[node name="spawn_front_left" type="Control" parent="Enemies" groups=["enemy_spawns"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 525.0
+offset_top = 500.0
+offset_right = 565.0
+offset_bottom = 540.0
+scale = Vector2(0.5, 0.5)
+
+[node name="spawn_front_right" type="Control" parent="Enemies" groups=["enemy_spawns"]]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1511.0
+offset_top = 662.0
+offset_right = 1551.0
+offset_bottom = 702.0
+scale = Vector2(0.5, 0.5)
 
 [node name="UI" type="CanvasLayer" parent="."]
 

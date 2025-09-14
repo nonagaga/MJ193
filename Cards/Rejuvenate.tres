@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="CardDataClass" load_steps=6 format=3 uid="uid://ivvnwut4t1q3"]
 
-[ext_resource type="Script" uid="uid://d21axcuelphhe" path="res://Classes/TagClass.gd" id="1_w5tmv"]
+[ext_resource type="Script" path="res://Classes/TagClass.gd" id="1_w5tmv"]
 [ext_resource type="Script" uid="uid://gikv04ntqw8f" path="res://Classes/ActionsClass.gd" id="2_bqxlb"]
-[ext_resource type="Script" uid="uid://lxsgxov14l4v" path="res://Actions/Action Classes/HealActionClass.gd" id="3_bqxlb"]
+[ext_resource type="Script" path="res://Actions/Action Classes/HealActionClass.gd" id="3_bqxlb"]
 [ext_resource type="Script" uid="uid://88hsnkwkom7x" path="res://Classes/CardClass.gd" id="3_tqbis"]
 
 [sub_resource type="Resource" id="Resource_tqbis"]

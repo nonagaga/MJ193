@@ -72,11 +72,8 @@ _data = {
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ddfm8"]
 
 [node name="CardShark" type="TextureButton" node_paths=PackedStringArray("animation_player", "target_highlight")]
-anchors_preset = -1
-anchor_right = 0.281
-anchor_bottom = 0.5
-offset_right = 540.48
-offset_bottom = 540.0
+offset_right = 820.0
+offset_bottom = 820.0
 scale = Vector2(0.5, 0.5)
 disabled = true
 toggle_mode = true
@@ -122,8 +119,9 @@ texture_progress = SubResource("PlaceholderTexture2D_ddfm8")
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1080.0
+offset_bottom = 1080.0
+scale = Vector2(0.77, 0.77)
 texture = ExtResource("4_gopnc")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
