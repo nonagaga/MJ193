@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dsoylqa2bggc7"
+path="res://.godot/imported/GabesMart.mp3-6043949934dda4e89b398767780812f2.mp3str"
+
+[deps]
+
+source_file="res://Music Manager/GabesMart.mp3"
+dest_files=["res://.godot/imported/GabesMart.mp3-6043949934dda4e89b398767780812f2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

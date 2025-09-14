@@ -1,11 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://dupy1f8fboept"]
+[gd_scene load_steps=16 format=3 uid="uid://dupy1f8fboept"]
 
 [ext_resource type="Script" uid="uid://dniyjxmmo5q0i" path="res://GameManager.gd" id="1_h07e4"]
-[ext_resource type="Texture2D" uid="uid://dbqii5kw37wq" path="res://Environment/background.png" id="2_h07e4"]
 [ext_resource type="Script" path="res://Enemies/enemygroup.gd" id="2_npqdh"]
 [ext_resource type="Script" path="res://Enemies/EnemyRes.gd" id="3_es14b"]
 [ext_resource type="Resource" uid="uid://cnijsmapu5kao" path="res://UI/Enemy Element/Shark.tres" id="4_es14b"]
 [ext_resource type="PackedScene" uid="uid://cgq0lkaaw5wyd" path="res://UI/Game UI.tscn" id="5_npqdh"]
+[ext_resource type="Script" path="res://Scenes/room_randomizer.gd" id="5_q4l48"]
+[ext_resource type="Texture2D" uid="uid://divq0iphn4ke1" path="res://Environment/Room_Backgrounds (7).png" id="6_5pvws"]
+[ext_resource type="Texture2D" uid="uid://1maq4kt68ttn" path="res://Environment/Room_Backgrounds (6).png" id="7_m400w"]
+[ext_resource type="Texture2D" uid="uid://dvjfnbxhxpmr4" path="res://Environment/Room_Backgrounds (2).png" id="8_f8n82"]
+[ext_resource type="Texture2D" uid="uid://cv3bubaduhmab" path="res://Environment/Room_Backgrounds (3).png" id="9_ms3cd"]
+[ext_resource type="Texture2D" uid="uid://d5ig6unyec4f" path="res://Environment/Room_Backgrounds (4).png" id="10_q6iin"]
+[ext_resource type="Texture2D" uid="uid://dcedigqh8bgbu" path="res://Environment/Room_Backgrounds (5).png" id="11_4qywa"]
+[ext_resource type="Texture2D" uid="uid://c3iu4q0mt32j6" path="res://Environment/Room_Backgrounds.png" id="12_johvf"]
 
 [sub_resource type="Resource" id="Resource_gxfk6"]
 script = ExtResource("2_npqdh")
@@ -27,15 +34,98 @@ enemy_options = Array[ExtResource("2_npqdh")]([SubResource("Resource_gxfk6"), Su
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
+script = ExtResource("5_q4l48")
 
-[node name="Background" type="TextureRect" parent="Background"]
+[node name="FillColor" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Colors" type="TextureRect" parent="Background"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 1
-texture = ExtResource("2_h07e4")
+texture = ExtResource("6_5pvws")
+
+[node name="Lines" type="TextureRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+texture = ExtResource("7_m400w")
+
+[node name="Posters" type="Control" parent="Background"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="poster1" type="TextureRect" parent="Background/Posters"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+texture = ExtResource("8_f8n82")
+
+[node name="poster2" type="TextureRect" parent="Background/Posters"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+texture = ExtResource("9_ms3cd")
+
+[node name="poster3" type="TextureRect" parent="Background/Posters"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+texture = ExtResource("10_q6iin")
+
+[node name="poster4" type="TextureRect" parent="Background/Posters"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+texture = ExtResource("11_4qywa")
+
+[node name="poster5" type="TextureRect" parent="Background/Posters"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1880.0
+offset_bottom = 1040.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 1
+texture = ExtResource("12_johvf")
 
 [node name="Enemies" type="Control" parent="."]
 layout_mode = 3
@@ -84,7 +174,6 @@ offset_left = 1511.0
 offset_top = 662.0
 offset_right = 1551.0
 offset_bottom = 702.0
-scale = Vector2(0.5, 0.5)
 
 [node name="UI" type="CanvasLayer" parent="."]
 
