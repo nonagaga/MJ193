@@ -3,8 +3,8 @@ extends Node
 signal card_drawn(card:CardDataClass)
 enum GAME_STATE {WIN, LOSE, PLAYING}
 var game_state : GAME_STATE = GAME_STATE.PLAYING
-var enemy_list : Array[EnemyTwo]
-var target_list : Array[EnemyTwo]
+var enemy_list : Array[Enemy]
+var target_list : Array[Enemy]
 @export var enemy_packed:PackedScene = preload("res://UI/Enemy Element/Enemy.tscn")
 @export var end_turn_button : Button
 @export var enemies : Control
@@ -35,7 +35,7 @@ func start_game() -> void:
 	# this is the main game loop
 	while game_state == GAME_STATE.PLAYING:
 		await player_turn()
-		for enemy : EnemyTwo in enemy_list:
+		for enemy : Enemy in enemy_list:
 			await enemy_turn(enemy)
 			
 func player_turn():
@@ -45,7 +45,7 @@ func player_turn():
 	# player has finished turn
 	await end_turn_button.pressed
 
-func enemy_turn(enemy : EnemyTwo):
+func enemy_turn(enemy : Enemy):
 	await enemy.attackTrigger()
 	check_player_death()
 
@@ -64,13 +64,13 @@ func point_buy_greed():
 			Globals.cur_points -= enemy_options[cur_group_indx].points
 			#add enemy to enemy node
 			for enemy_res:EnemyRes in enemy_options[cur_group_indx].enemy_reses:
-				var new_enemy:EnemyTwo = create_enemy(enemy_res)
+				var new_enemy:Enemy = create_enemy(enemy_res)
 				adjust_add_child(new_enemy)
 				enemy_list.append(new_enemy)
 				new_enemy.i_died.connect(kill_enemy.bind(new_enemy))
 
 
-func adjust_add_child(balls:EnemyTwo):
+func adjust_add_child(balls:Enemy):
 	#use this for custom placement logic for dynamic adding to the scene
 	for spawn in get_tree().get_nodes_in_group("enemy_spawns"):
 		if spawn.get_child_count() == 0:
@@ -80,12 +80,12 @@ func adjust_add_child(balls:EnemyTwo):
 	printerr("No available spawns left!")
 	
 
-func create_enemy(enemy_res:EnemyRes)->EnemyTwo:
-	var new_enemy_instance : EnemyTwo = enemy_packed.instantiate()
+func create_enemy(enemy_res:EnemyRes)->Enemy:
+	var new_enemy_instance : Enemy = enemy_packed.instantiate()
 	new_enemy_instance.enemy_res = enemy_res
 	return new_enemy_instance
 
-func kill_enemy(enemy:EnemyTwo):
+func kill_enemy(enemy:Enemy):
 	enemy_list.erase(enemy)
 	enemy.queue_free()
 
