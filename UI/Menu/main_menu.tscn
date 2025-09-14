@@ -34,19 +34,18 @@ layout_mode = 2
 
 [node name="Start" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 5
 theme_override_font_sizes/font_size = 50
 text = "Game"
 
 [node name="Options" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 50
 text = "Options"
 
 [node name="Credits" type="Button" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 5
 theme_override_font_sizes/font_size = 50
 text = "Credits"
 
