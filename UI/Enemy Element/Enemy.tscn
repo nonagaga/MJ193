@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cs26jgu7ccx8f" path="res://Enemies/Enemy.gd" id="1_oe87t"]
 [ext_resource type="Resource" uid="uid://cnijsmapu5kao" path="res://UI/Enemy Element/Shark.tres" id="2_ncrdq"]
 [ext_resource type="Texture2D" uid="uid://da4icni82fsy1" path="res://UI/Enemy Element/Target Highlight.png" id="2_pkyom"]
-[ext_resource type="Texture2D" uid="uid://bs4cbal8fpet5" path="res://cardshark1.png" id="3_8cfcj"]
+[ext_resource type="Texture2D" uid="uid://bs4cbal8fpet5" path="res://Enemies/images/cardshark1.png" id="3_8cfcj"]
 
 [sub_resource type="Animation" id="Animation_ua8ok"]
 length = 0.001

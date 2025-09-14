@@ -1,6 +1,13 @@
 extends Node
+
+signal health_changed(new_health)
+
 @export var maxHP:int
-var hp:int
+var hp:int :
+	set(value):
+		hp = max(0, value)
+		health_changed.emit(hp)
+
 @export var maxDeckSize:int = 21
 @export var deck:Array[CardDataClass]
 @export var discard:Array[CardDataClass]

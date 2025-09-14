@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dupy1f8fboept"]
+[gd_scene load_steps=19 format=3 uid="uid://dupy1f8fboept"]
 
 [ext_resource type="Script" uid="uid://dniyjxmmo5q0i" path="res://GameManager.gd" id="1_h07e4"]
 [ext_resource type="Script" uid="uid://bo8d7e5dp86qf" path="res://Enemies/enemygroup.gd" id="2_npqdh"]
@@ -13,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://d5ig6unyec4f" path="res://Environment/Room_Backgrounds (4).png" id="10_q6iin"]
 [ext_resource type="Texture2D" uid="uid://dcedigqh8bgbu" path="res://Environment/Room_Backgrounds (5).png" id="11_4qywa"]
 [ext_resource type="Texture2D" uid="uid://c3iu4q0mt32j6" path="res://Environment/Room_Backgrounds.png" id="12_johvf"]
+[ext_resource type="Texture2D" uid="uid://16x22j5tklr7" path="res://UI/Health Bar/HP_Bar.png" id="14_m400w"]
+[ext_resource type="Texture2D" uid="uid://dakmfcdcaawju" path="res://UI/Health Bar/HP_Bar_2.png" id="15_f8n82"]
+[ext_resource type="Script" uid="uid://dy780w7e82fvu" path="res://Scenes/health_bar.gd" id="16_f8n82"]
 
 [sub_resource type="Resource" id="Resource_gxfk6"]
 script = ExtResource("2_npqdh")
@@ -178,5 +181,16 @@ offset_bottom = 702.0
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="GameUi" parent="UI" instance=ExtResource("5_npqdh")]
+
+[node name="Health Bar" type="TextureProgressBar" parent="UI"]
+offset_left = 29.0
+offset_top = 29.0
+offset_right = 1309.0
+offset_bottom = 429.0
+scale = Vector2(0.32, 0.32)
+value = 100.0
+texture_under = ExtResource("14_m400w")
+texture_progress = ExtResource("15_f8n82")
+script = ExtResource("16_f8n82")
 
 [editable path="UI/GameUi"]

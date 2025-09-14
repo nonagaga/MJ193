@@ -8,7 +8,8 @@ extends CanvasLayer
 func _ready() -> void:
 	for child : Control in posters.get_children():
 		if randf() > 0.5:
-			child.visible = false
+			pass
+			# child.visible = false
 
 func random_color() -> Color:
 	return Color(randf(), randf(), randf())

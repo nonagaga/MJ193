@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyRes" load_steps=4 format=3 uid="uid://cnijsmapu5kao"]
 
 [ext_resource type="Script" uid="uid://bsk54fjtlwb7n" path="res://Enemies/EnemyRes.gd" id="1_j0okq"]
-[ext_resource type="Texture2D" uid="uid://bs4cbal8fpet5" path="res://cardshark1.png" id="2_p34j6"]
+[ext_resource type="Texture2D" uid="uid://bs4cbal8fpet5" path="res://Enemies/images/cardshark1.png" id="2_p34j6"]
 [ext_resource type="AudioStream" uid="uid://btr5h7yvj1y12" path="res://Music Manager/CardShark.mp3" id="3_j0okq"]
 
 [resource]
